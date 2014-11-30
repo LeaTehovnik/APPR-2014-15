@@ -21,7 +21,7 @@
 #Tabela1
 
 uvoziRekorde <- function() {
-  return(read.table("podatki/kodazarekorde.xml", sep = ";", as.is = TRUE,
+  return(read.table("podatki/kodazarekorde.xml", sep = ";", as.is = TRUE, fill  = TRUE,
                     row.names = 1,
                     col.names = c("cas", "ime", "državljanstvo", "datum", "kraj"),
                     fileEncoding = "Windows-1250"))
@@ -29,4 +29,6 @@ uvoziRekorde <- function() {
 
 cat("Uvažam podatke o rekordih...\n")
 rekordi <- uvoziRekorde()
+
+#v izvirno kodo sem dodala fill = TRUE, da mi zapolni prazne elemente tabele
 
