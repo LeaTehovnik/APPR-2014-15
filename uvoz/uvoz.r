@@ -23,7 +23,7 @@
 uvoziRekorde <- function() {
   return(read.table("podatki/kodazarekorde.xml", sep = ";", as.is = TRUE, fill  = TRUE,
                     row.names = 1,
-                    col.names = c("cas", "ime", "državljanstvo", "datum", "kraj"),
+                    col.names = c("cas", "ime", "državljanstvo", "datum", "kraj", "b", "c"),
                     fileEncoding = "Windows-1250"))
 }
 
@@ -31,4 +31,4 @@ cat("Uvažam podatke o rekordih...\n")
 rekordi <- uvoziRekorde()
 
 #v izvirno kodo sem dodala fill = TRUE, da mi zapolni prazne elemente tabele
-
+#b in c sta imeni stlopcev, ki ju nameravam pobrisati
