@@ -1,5 +1,7 @@
 # Uvoz s spletne strani
 
+source("lib/casvsekunde.R")
+
 library(XML)
 
 # Vrne vektor nizov z odstranjenimi začetnimi in končnimi "prazninami" (whitespace)
@@ -9,7 +11,7 @@ stripByPath <- function(x, path) {
                     function(y) gsub("^\\s*(.*?)\\s*$", "\\1", xmlValue(y))))
 }
 
-uvozi.maraton <- function() {
+uvozi.maraton <- function(i) {
   url.maraton <- "http://en.wikipedia.org/wiki/Marathon_world_record_progression"
   doc.maraton <- htmlTreeParse(url.maraton, useInternalNodes=TRUE)
   
@@ -18,7 +20,7 @@ uvozi.maraton <- function() {
   
   # Iz druge tabele dobimo seznam vrstic (<tr>) neposredno pod
   # trenutnim vozliščem
-  vrstice <- getNodeSet(tabele[[2]], "./tr")
+  vrstice <- getNodeSet(tabele[[i]], "./tr")
   
   # Seznam vrstic pretvorimo v seznam (znakovnih) vektorjev
   # s porezanimi vsebinami celic (<td>) neposredno pod trenutnim vozliščem
@@ -35,4 +37,3 @@ uvozi.maraton <- function() {
   tabela$Time <- sapply(tabela$Time, cas.v.sekunde)
   return(tabela)
 }
-
