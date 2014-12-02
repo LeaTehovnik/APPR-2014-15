@@ -9,12 +9,12 @@ stripByPath <- function(x, path) {
                     function(y) gsub("^\\s*(.*?)\\s*$", "\\1", xmlValue(y))))
 }
 
-uvozi.rekorde <- function() {
-  url.rekorde <- "http://en.wikipedia.org/wiki/Marathon_world_record_progression"
-  doc.rekorde <- htmlTreeParse(url.rekorde, encoding = "UTF-8", useInternalNodes=TRUE)
+uvozi.obcine <- function() {
+  url.obcine <- "http://en.wikipedia.org/wiki/Marathon_world_record_progression"
+  doc.obcine <- htmlTreeParse(url.obcine, useInternalNodes=TRUE)
   
   # Poiščemo vse tabele v dokumentu
-  tabele <- getNodeSet(doc.rekorde, "//table")
+  tabele <- getNodeSet(doc.obcine, "//table")
   
   # Iz druge tabele dobimo seznam vrstic (<tr>) neposredno pod
   # trenutnim vozliščem
@@ -32,7 +32,7 @@ uvozi.rekorde <- function() {
   
   # Podatke iz matrike spravimo v razpredelnico
   return(data.frame(apply(gsub("\\*", "",
-                          gsub(",", ".",
-                          gsub("\\.", "", matrika[,2:5]))),
-                    2, as.numeric), row.names=matrika[,1]))
+                               gsub(",", ".",
+                                    gsub("\\.", "", matrika[,2:5]))),
+                          2, as.numeric), row.names=matrika[,1]))
 }
