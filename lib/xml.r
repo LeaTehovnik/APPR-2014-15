@@ -13,8 +13,6 @@ uvozi.rekorde <- function() {
   url.rekorde <- "http://en.wikipedia.org/wiki/Marathon_world_record_progression"
   doc.rekorde <- htmlTreeParse(url.rekorde, encoding = "UTF-8", useInternalNodes=TRUE)
   
-  
-  
   # Poiščemo vse tabele v dokumentu
   tabele <- getNodeSet(doc.rekorde, "//table")
   
