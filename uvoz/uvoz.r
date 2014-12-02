@@ -18,15 +18,16 @@
 # 2. fazi. Seveda bi morali ustrezno datoteko uvoziti v prihodnjih
 # fazah.
 
-
+source("lib/xml.r")
 
 uvoziRekorde <- function() {
   return(read.table("podatki/rekordi.csv", sep = ";", as.is = TRUE,
-                    row.names = 1,
-                    col.names = c("čas", "ime", "državljanstvo", "datum", "kraj", "spol"),
+                    col.names = c("Čas", "Ime", "Državljanstvo", "Datum", "Kraj", "Spol"),
                     fileEncoding = "Windows-1250"))
 }
 
 cat("Uvažam podatke o rekordih...\n")
 rekordi <- uvoziRekorde()
+
+
 

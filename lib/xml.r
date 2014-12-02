@@ -9,12 +9,12 @@ stripByPath <- function(x, path) {
                     function(y) gsub("^\\s*(.*?)\\s*$", "\\1", xmlValue(y))))
 }
 
-uvozi.obcine <- function() {
-  url.obcine <- "http://en.wikipedia.org/wiki/Marathon_world_record_progression"
-  doc.obcine <- htmlTreeParse(url.obcine, useInternalNodes=TRUE)
+uvozi.maraton <- function() {
+  url.maraton <- "http://en.wikipedia.org/wiki/Marathon_world_record_progression"
+  doc.maraton <- htmlTreeParse(url.maraton, useInternalNodes=TRUE)
   
   # Poiščemo vse tabele v dokumentu
-  tabele <- getNodeSet(doc.obcine, "//table")
+  tabele <- getNodeSet(doc.maraton, "//table")
   
   # Iz druge tabele dobimo seznam vrstic (<tr>) neposredno pod
   # trenutnim vozliščem
@@ -28,11 +28,11 @@ uvozi.obcine <- function() {
   matrika <- matrix(unlist(seznam), nrow=length(seznam), byrow=TRUE)
   
   # Imena stolpcev matrike dobimo iz celic (<th>) glave (prve vrstice) prve tabele
-  colnames(matrika) <- gsub("\n", " ", stripByPath(tabele[[2]][[1]], ".//th"))
+  colnames(matrika) <- gsub("\n", " ", stripByPath(vrstice[[1]], ".//th"))
   
   # Podatke iz matrike spravimo v razpredelnico
-  return(data.frame(apply(gsub("\\*", "",
-                               gsub(",", ".",
-                                    gsub("\\.", "", matrika[,2:5]))),
-                          2, as.numeric), row.names=matrika[,1]))
+  tabela <- data.frame(gsub("\\[.*$", "", matrika))
+  tabela$Time <- sapply(tabela$Time, cas.v.sekunde)
+  return(tabela)
 }
+
