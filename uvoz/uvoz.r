@@ -38,6 +38,6 @@ zenske <- uvozi.maraton(2)
 maraton <- rbind(moski, zenske)
 maraton$Source <- NULL
 maraton$Notes <- NULL
-maraton["Spol"] <- NA
+maraton$Spol <- c(rep("M", 49), rep("Z",38))
 
 
