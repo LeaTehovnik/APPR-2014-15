@@ -1,14 +1,10 @@
-pdf("slike/grafi.pdf",paper="a4r")
+pdf("slike/graf1.pdf",paper="a4r")
 pdf.options(encoding='ISOLatin2.enc')
 #Graf, ki prikazuje delež držav, iz katerih so maratonci
 
 table(maraton$Državljanstvo)
 pie(table(maraton$Državljanstvo), main="Državljanstva maratoncev")
 
-#graf razmerja med spolom
-
-table(maraton$Spol)
-pie(table(maraton$Spol), main="Razmerje med spoloma")
 
 dev.off()
 
