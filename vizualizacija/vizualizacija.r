@@ -9,6 +9,10 @@ svet <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2/gadm_v2_shp.zip",
                           "svet", "gadm_v2.shp", mapa = "zemljevid",
                           encoding = "Windows-1250")
 
+#preuredit je treba West Germany in Soviet Union
+maraton$Državljanstvo[maraton$Državljanstvo == "West Germany"] <- "Germany"
+maraton$Državljanstvo[maraton$Državljanstvo == "Soviet Union"] <- "Russia"
+
 # Funkcija, ki podatke preuredi glede na vrstni red v zemljevidu
 preuredi <- function(podatki, zemljevid) {
   nove.svet <- c()
