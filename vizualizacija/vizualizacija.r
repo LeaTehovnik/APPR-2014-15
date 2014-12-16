@@ -5,8 +5,8 @@ source("lib/uvozi.zemljevid.r")
 
 # Uvozimo zemljevid.
 cat("Uvažam zemljevid...\n")
-svet <- uvozi.zemljevid("http://biogeo.ucdavis.edu/data/gadm2/gadm_v2_shp.zip",
-                          "svet", "gadm_v2.shp", mapa = "zemljevid",
+svet <- uvozi.zemljevid("http://www.naturalearthdata.com/http//www.naturalearthdata.com/download/110m/cultural/ne_110m_admin_0_countries.zip",
+                          "svet", "ne_110m_admin_0_countries.shp", mapa = "zemljevid",
                           encoding = "Windows-1250")
 
 #preuredit je treba West Germany in Soviet Union
@@ -34,17 +34,16 @@ preuredi <- function(podatki, zemljevid) {
 # Preuredimo podatke, da jih bomo lahko izrisali na zemljevid.
 mmaraton <- preuredi(maraton, svet)
 
-# Izračunamo povprečno velikost družine.
-druzine$povprecje <- apply(druzine[1:4], 1, function(x) sum(x*(1:4))/sum(x))
-min.povprecje <- min(druzine$povprecje, na.rm=TRUE)
-max.povprecje <- max(druzine$povprecje, na.rm=TRUE)
+
 
 # Narišimo zemljevid v PDF.
 cat("Rišem zemljevid...\n")
 pdf("slike/maraton_svet.pdf", width=6, height=4)
 
 n = 100
-barve = topo.colors(n)[1+(n-1)*(druzine$povprecje-min.povprecje)/(max.povprecje-min.povprecje)]
-plot(obcine, col = barve)
+#barve = topo.colors(n)[1+(n-1)*(druzine$povprecje-min.povprecje)/(max.povprecje-min.povprecje)]
+#plot(obcine, col = barve)
+
+plot(svet)
 
 dev.off()
