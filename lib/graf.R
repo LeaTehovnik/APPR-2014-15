@@ -5,7 +5,7 @@ pdf.options(encoding='ISOLatin2.enc')
 #drzave, kjer sta manj kot trije maratonci, sem združila v druge
 drzave <- table(maraton$Državljanstvo)
 drzave <- drzave[order(drzave, decreasing=TRUE)]
-druge <- drzave < 3 # po potrebi lahko spremeniš to mejo
+druge <- drzave < 3 
 drzave <- c(drzave[!druge], "Druge" = sum(drzave[druge]))
 pie(drzave, main="Državljanstva maratoncev", clockwise = TRUE, cex = 1)
 
