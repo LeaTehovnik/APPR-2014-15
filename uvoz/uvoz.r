@@ -29,7 +29,7 @@
 # cat("Uvažam podatke o rekordih...\n")
 # rekordi <- uvoziRekorde()
 
-source("lib/xml.r")
+source("lib/xml.r",encoding="UTF-8")
 
 cat("Uvažam podatke o rekordih...\n")
 #zaenkrat še zakomentirano

@@ -33,7 +33,9 @@ uvozi.maraton <- function(i) {
   colnames(matrika) <- gsub("\n", " ", stripByPath(vrstice[[1]], ".//th"))
   
   # Podatke iz matrike spravimo v razpredelnico
-  tabela <- data.frame(gsub("\\[.*$", "", matrika))
+  tabela <- data.frame(gsub("^[^[:alnum:]]*", "",
+                            gsub("\\[.*$", "", matrika)),
+                       stringsAsFactors=FALSE)
   tabela$Time <- sapply(tabela$Time, cas.v.sekunde)
   return(tabela)
 }
