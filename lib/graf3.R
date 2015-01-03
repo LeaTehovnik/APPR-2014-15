@@ -16,3 +16,4 @@ pie(kraj, main="Število postavljenih rekordov na posameznem maratonu", clockwis
 
 
 dev.off()
+
