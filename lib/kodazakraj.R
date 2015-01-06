@@ -10,19 +10,34 @@
 # ali pa kar v R. Glede na to, da imaš le 24 različnih maratonov, tu ne bo
 # preveč dela.
 
+#kaj pa če bi naredila kar vekktor ,k i bi mi maratoen zamenjal z državami
+
+#številska spremenljivka..če se državljanstvo ujema z
+
 imenadrzav <- maraton$Drzavljanstvo
 imenadrzav <- imenadrzav[!duplicated(imenadrzav)]
-kraj <- table(maraton$Kraj)  #kaj pa bre table?
+
+#če se ujema slučajno drž. z maratonom
+#v kraj je KOLIKOKRAT je bil podrt rekord, rabim nvo vekotr
+#ki mi bo 'naredil' države in jih psotavil na zemlejvid
+kraj <- table(maraton$Kraj)  #kaj pa brez table?
 kraj <- kraj[order(kraj, decreasing=TRUE)]
 kraj <- kraj[kraj %in% imenadrzav] #ali je kraj v imenu držav
+#če je, ga kar ?zamenjaj'?
 
-
+#to bo imenska spremenljivka, dodati moram še, 
+#da bo  tujec imel rdečo barvo, državljan modro, enako zeleno.
 #če dobim nek vektor
 # x = nam pove ali se država ujema z državljanstvom, y ,če se ne
 tujec <-  len(x) > len(y)...! %in% imenadrzav
 drzavljan <- len(y) > len(x)
 enako <- len(x) = len(y)
-#to bo imenska spremenljivka
+tri <- c(tujec, drzavljan,enako)
+barve <- rainbow(3)
+
+
+
+
 
 #točke na zemlejvidu
 text(coordinates(svet), 
