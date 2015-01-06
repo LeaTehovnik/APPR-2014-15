@@ -3,7 +3,7 @@ pdf.options(encoding='ISOLatin2.enc')
 #Graf, ki prikazuje delež držav, iz katerih so maratonci
 
 #drzave, kjer sta manj kot trije maratonci, sem združila v druge
-drzave <- table(maraton$Državljanstvo)
+drzave <- table(maraton$Drzavljanstvo)
 drzave <- drzave[order(drzave, decreasing=TRUE)]
 druge <- drzave < 3 
 drzave <- c(drzave[!druge], "Druge" = sum(drzave[druge]))

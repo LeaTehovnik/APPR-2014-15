@@ -39,6 +39,6 @@ maraton <- rbind(moski, zenske)
 maraton$Source <- NULL
 maraton$Notes <- NULL
 maraton$Spol <- c(rep("M", 49), rep("Z",38))
-colnames(maraton) <- c("Čas", "Ime", "Državljanstvo", "Datum", "Kraj", "Spol")
+colnames(maraton) <- c("Čas", "Ime", "Drzavljanstvo", "Datum", "Kraj", "Spol")
 
 
