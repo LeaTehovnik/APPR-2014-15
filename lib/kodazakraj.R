@@ -39,8 +39,11 @@ barve <- rainbow(3)
 
 
 
-#točke na zemlejvidu
+#točke na zemlejvidu, tukaj bi dala vektor z 
+#imeni maratonov? kako bo vedel, kje je kaj??
+# imena maratonov so v kraj :
+
 text(coordinates(svet), 
-     labels = as.character(imenadrzav), cex = 0.7)
+     labels = as.character(kraj), cex = 0.7) #namesto krajev mi vrže številke
 barve <- rainbow(49)
 plot(svet, col = barve)
