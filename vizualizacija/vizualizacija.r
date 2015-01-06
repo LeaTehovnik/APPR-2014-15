@@ -71,13 +71,9 @@ plot(svet, col = barve[as.character(svet$name_long)])
 
 # Narišimo zemljevid v PDF.
 cat("Rišem zemljevid...\n")
-pdf("slike/maraton_svet.pdf", width=6, height=4)
+pdf("slike/maraton_svet1.pdf", width=6, height=4)
 
-n = 100
-#barve = topo.colors(n)[1+(n-1)*(druzine$povprecje-min.povprecje)/(max.povprecje-min.povprecje)]
-#plot(obcine, col = barve)
 
-plot(svet)
 
 dev.off()
 
@@ -150,7 +146,7 @@ barve[names(which(enako))] <- "green"
 
 # Narišimo zemljevid v PDF.
 cat("Rišem zemljevid...\n")
-pdf("slike/maraton_svet.pdf", width=6, height=4)
+pdf("slike/maraton_svet2.pdf", width=6, height=4)
 
 n = 100
 
