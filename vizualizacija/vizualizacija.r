@@ -59,7 +59,7 @@ maratoni[grep("OR", maratoni)] <- "United States"
 
 maraton$Drzava <- maratoni[maraton$Kraj]
 
-#še pobrvati
+#še pobarvati
 rekordi <- table(maraton$Drzava)
 rekordiveni <- unique(rekordi)
 rekordiveni <- rekordiveni[order(rekordiveni)]
@@ -85,8 +85,8 @@ svet <- uvozi.zemljevid("http://www.naturalearthdata.com/http//www.naturalearthd
                         encoding = "Windows-1250")
 
 #preuredit je treba West Germany in Soviet Union
-maraton$Drzavljanstvo[maraton$Državljanstvo == "West Germany"] <- "Germany"
-maraton$Drzavljanstvo[maraton$Državljanstvo == "Soviet Union"] <- "Russia"
+maraton$Drzavljanstvo[maraton$Drzavljanstvo == "West Germany"] <- "Germany"
+maraton$Drzavljanstvo[maraton$Drzavljanstvo == "Soviet Union"] <- "Russia"
 
 # Funkcija, ki podatke preuredi glede na vrstni red v zemljevidu
 preuredi <- function(podatki, zemljevid) {
