@@ -13,9 +13,7 @@ svet <- uvozi.zemljevid("http://www.naturalearthdata.com/http//www.naturalearthd
                           "svet", "ne_110m_admin_0_countries.shp", mapa = "zemljevid",
                           encoding = "Windows-1250")
 
-#preuredit je treba West Germany in Soviet Union
-maraton$Drzavljanstvo[maraton$Državljanstvo == "West Germany"] <- "Germany"
-maraton$Drzavljanstvo[maraton$Državljanstvo == "Soviet Union"] <- "Russia"
+
 
 # Funkcija, ki podatke preuredi glede na vrstni red v zemljevidu
 preuredi <- function(podatki, zemljevid) {
