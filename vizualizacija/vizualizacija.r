@@ -13,9 +13,7 @@ svet <- uvozi.zemljevid("http://www.naturalearthdata.com/http//www.naturalearthd
                           "svet", "ne_110m_admin_0_countries.shp", mapa = "zemljevid",
                           encoding = "Windows-1250")
 
-#preuredit je treba West Germany in Soviet Union
-maraton$Drzavljanstvo[maraton$Državljanstvo == "West Germany"] <- "Germany"
-maraton$Drzavljanstvo[maraton$Državljanstvo == "Soviet Union"] <- "Russia"
+
 
 # Funkcija, ki podatke preuredi glede na vrstni red v zemljevidu
 preuredi <- function(podatki, zemljevid) {
@@ -59,6 +57,10 @@ maratoni[grep("OR", maratoni)] <- "United States"
 
 maraton$Drzava <- maratoni[maraton$Kraj]
 
+# Narišimo zemljevid v PDF.
+cat("Rišem zemljevid...\n")
+pdf("slike/maraton_svet1.pdf", width=6, height=4)
+
 #še pobarvati
 rekordi <- table(maraton$Drzava)
 rekordiveni <- unique(rekordi)
@@ -66,12 +68,15 @@ rekordiveni <- rekordiveni[order(rekordiveni)]
 barve <- rgb(1, 0, 0, match(rekordi, rekordiveni)/length(rekordiveni))
 names(barve) <- names(rekordi)
 plot(svet, col = barve[as.character(svet$name_long)])
+title("Število podrtih maratonov")
+legend("left", legend = rekordiveni, fill = rgb(1, 0, 0, (1:length(rekordiveni))/length(rekordiveni)), cex = 0.5)
+imena <- c("London", "Berlin", "Paris","Tokio")
+mesta <- data.frame("long" = c(51.51, 52.52, 48.85, 139.75), "lat"= c(-0.13, 13.41, 2.35,  35.68))
+text(coordinates(mesta[c("long", "lat")]),
+     labels = imena,
+     pos= 1, cex = 0.6, offset = 0.3)
 
 
-
-# Narišimo zemljevid v PDF.
-cat("Rišem zemljevid...\n")
-pdf("slike/maraton_svet1.pdf", width=6, height=4)
 
 
 
@@ -132,6 +137,7 @@ maraton$Drzava <- maratoni[maraton$Kraj]
 
 
 drzave1 <- table(maraton$Drzava)
+ujema <- maraton$Drzavljanstvo == maraton$Drzava
 domacin <- sapply(names(drzave1), function(x) sum(ujema[maraton$Drzava == x]))
 barve <- rep("white", nrow(svet))
 names(barve) <- svet$name_long
@@ -152,6 +158,13 @@ n = 100
 
 #plot(obcine, col = barve)
 plot(svet, col = barve)
+title("Zmage domačinov in tujcev")
+legend("left", legend = c("Tujec", "Državljan", "Enako"), fill = c("red", "blue", "green"), cex = 0.6)
+imena <- c("London", "Berlin", "Paris","Tokio")
+mesta <- data.frame("long" = c(51.51, 52.52, 48.85, 139.75), "lat"= c(-0.13, 13.41, 2.35,  35.68))
+text(coordinates(mesta[c("long", "lat")]),
+     labels = imena,
+     pos= 1, cex = 0.6, offset = 0.3)
 
 
 dev.off()
