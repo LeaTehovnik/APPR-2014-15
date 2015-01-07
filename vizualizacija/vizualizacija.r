@@ -67,6 +67,7 @@ barve <- rgb(1, 0, 0, match(rekordi, rekordiveni)/length(rekordiveni))
 names(barve) <- names(rekordi)
 plot(svet, col = barve[as.character(svet$name_long)])
 title("Število podrtih maratonov")
+legend("left", legend = rekordiveni, fill = rgb(1, 0, 0, (1:length(rekordiveni))/length(rekordiveni)))
 
 
 
@@ -133,6 +134,7 @@ maraton$Drzava <- maratoni[maraton$Kraj]
 
 
 drzave1 <- table(maraton$Drzava)
+ujema <- maraton$Drzavljanstvo == maraton$Drzava
 domacin <- sapply(names(drzave1), function(x) sum(ujema[maraton$Drzava == x]))
 barve <- rep("white", nrow(svet))
 names(barve) <- svet$name_long
