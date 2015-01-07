@@ -38,8 +38,11 @@ V prihodnjih fazah pa bom uvozila tudi grafe, ki bodo nakazovali spreminjanje re
 \section{Analiza in vizualizacija podatkov}
 
 V tretji fazi je naša naloga bila, da dva podatka, imenskega ali urejenostnega ter številskega podamo na zemljevidu. 
-Odločila sem se, da bom preučila kolikokrat je bil na posameznem maratonu postavljen rekord in to na zemljevidu predstavila kot številko spremenjlivko - jakost barve bo določala število, močnejša bo barva, večkrat je bil podrt rekord in obratno.
-Za imenski ali urejenostni podatek pa sem analizirala ali je rekord maratona večkrat postavil državljan države, kjer se je odvil dogodek, tujec ali sta ga oba postavila enakokrat. Torej, če je državljan včekrat postavil rekord, bo država, kjer se je odvil maraton obarvana z rdečo, če tujec z modro in nazadnje z zeleno, če sta rekord oba postavila enakokrat.
+Odločila sem se, da bom preučila kolikokrat je bil na posameznem maratonu postavljen rekord in to na zemljevidu predstavila kot številko spremenjlivko - jakost barve bo določala število, močnejša bo barva, večkrat je bil podrt rekord in obratno. Za ta nameno je bilo potrebno podatke malo preurediti. Iz stolpca Kraj sem morala izluščiti države maratonov. Najprej sem iz stolpca državljanstev naredila en sam vektor, ki je vseboval vsa državljanjstva brez ponavljanja. Potem sem .. To sem naredila z..
+Za imenski ali urejenostni podatek pa sem analizirala ali je rekord maratona večkrat postavil državljan države, kjer se je odvil dogodek, tujec ali sta ga oba postavila enakokrat. Torej, če je državljan večkrat postavil rekord, bo država, kjer se je odvil maraton obarvana z rdečo, če tujec z modro in nazadnje z zeleno, če sta rekord oba postavila enakokrat.
+Ker sem pri številski spremenljivki že dobila države maratonov, je bilo ugotavljanje, ali se država ujema z državljanstvom, lažje.
+Nazadnjem sem na zemjevid dodala še oznake. Na zemljevidu sem označila mesta, kjer je bil rekord največkrat podrt. Na začetku mi je to povročalo nekaj težav, saj so se mi mesta izpisala kar preko celega zemljevida, a sem potem to odpravila.
+
 
 %\includegraphics{../slike/povprecna_druzina.pdf}
 
