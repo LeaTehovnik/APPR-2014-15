@@ -68,7 +68,11 @@ names(barve) <- names(rekordi)
 plot(svet, col = barve[as.character(svet$name_long)])
 title("Število podrtih maratonov")
 legend("left", legend = rekordiveni, fill = rgb(1, 0, 0, (1:length(rekordiveni))/length(rekordiveni)))
-
+imena <- c("London")
+mesta <- data.frame("long" = (52.52), "lat"= (-0.13))
+text(coordinates(mesta[c("long", "lat")]),
+     labels = imena,
+     pos= 1, cex = 0.6, offset = 0.3)
 
 
 
