@@ -59,6 +59,10 @@ maratoni[grep("OR", maratoni)] <- "United States"
 
 maraton$Drzava <- maratoni[maraton$Kraj]
 
+# Narišimo zemljevid v PDF.
+cat("Rišem zemljevid...\n")
+pdf("slike/maraton_svet1.pdf", width=6, height=4)
+
 #še pobarvati
 rekordi <- table(maraton$Drzava)
 rekordiveni <- unique(rekordi)
@@ -67,7 +71,7 @@ barve <- rgb(1, 0, 0, match(rekordi, rekordiveni)/length(rekordiveni))
 names(barve) <- names(rekordi)
 plot(svet, col = barve[as.character(svet$name_long)])
 title("Število podrtih maratonov")
-legend("left", legend = rekordiveni, fill = rgb(1, 0, 0, (1:length(rekordiveni))/length(rekordiveni)))
+legend("left", legend = rekordiveni, fill = rgb(1, 0, 0, (1:length(rekordiveni))/length(rekordiveni)), cex = 0.5)
 imena <- c("London", "Berlin", "Paris","Tokio")
 mesta <- data.frame("long" = c(51.51, 52.52, 48.85, 139.75), "lat"= c(-0.13, 13.41, 2.35,  35.68))
 text(coordinates(mesta[c("long", "lat")]),
@@ -75,10 +79,6 @@ text(coordinates(mesta[c("long", "lat")]),
      pos= 1, cex = 0.6, offset = 0.3)
 
 
-
-# Narišimo zemljevid v PDF.
-cat("Rišem zemljevid...\n")
-pdf("slike/maraton_svet1.pdf", width=6, height=4)
 
 
 
