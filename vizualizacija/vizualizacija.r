@@ -66,6 +66,7 @@ rekordiveni <- rekordiveni[order(rekordiveni)]
 barve <- rgb(1, 0, 0, match(rekordi, rekordiveni)/length(rekordiveni))
 names(barve) <- names(rekordi)
 plot(svet, col = barve[as.character(svet$name_long)])
+title("Število podrtih maratonov")
 
 
 
@@ -152,6 +153,7 @@ n = 100
 
 #plot(obcine, col = barve)
 plot(svet, col = barve)
+title("Zmage domačinov in tujcev")
 
 
 dev.off()
