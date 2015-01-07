@@ -160,11 +160,12 @@ n = 100
 plot(svet, col = barve)
 title("Zmage domačinov in tujcev")
 legend("left", legend = c("Tujec", "Državljan", "Enako"), fill = c("red", "blue", "green"), cex = 0.6)
-imena <- c("London", "Berlin", "Paris","Tokio")
-mesta <- data.frame("long" = c(-0.13, 13.41, 2.35,  35.68), "lat"= c(51.51, 52.52, 48.85, 139.75))
+imena <- c("London", "New York", "Tokyo")
+mesta <- data.frame("long" = c(-0.13, -74.01, 139.75), "lat"= c(51.51, 40.71,35.68))
 text(coordinates(mesta),
      labels = imena,
-     pos= 1, cex = 0.6, offset = 0.3)
+      pos = 1, cex = 0.6,)
+points(coordinates(mesta), type = "p", pch = 15, cex = 0.4, col = "yellow")
 
 
 
