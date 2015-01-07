@@ -71,6 +71,7 @@ legend("left", legend = rekordiveni, fill = rgb(1, 0, 0, (1:length(rekordiveni))
 
 
 
+
 # Narišimo zemljevid v PDF.
 cat("Rišem zemljevid...\n")
 pdf("slike/maraton_svet1.pdf", width=6, height=4)
