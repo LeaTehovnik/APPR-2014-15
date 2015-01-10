@@ -146,7 +146,7 @@ tujec <- domacin < drzave1/2
 drzavljan <- domacin > drzave1/2
 enako <- domacin == drzave1/2
 barve[names(which(tujec))] <- "red"
-barve[names(which(drzavljan))] <- "blue"
+barve[names(which(drzavljan))] <- "steelblue"
 barve[names(which(enako))] <- "green"
 
 
@@ -160,7 +160,7 @@ n = 100
 #plot(obcine, col = barve)
 plot(svet, col = barve)
 title("Zmage domačinov in tujcev")
-legend("left", legend = c("Tujec", "Državljan", "Enako"), fill = c("red", "blue", "green"), cex = 0.6)
+legend("left", legend = c("Tujec", "Državljan", "Enako"), fill = c("red", "steelblue", "green"), cex = 0.6)
 imena <- c("London", "New York", "Tokyo")
 mesta <- data.frame("long" = c(-0.13, -74.01, 139.75), "lat"= c(51.51, 40.71,35.68))
 text(coordinates(mesta),
