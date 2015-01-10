@@ -28,31 +28,34 @@ Glede na izkušnje predvidevam, da bodo rekord večkrat podrli moški, saj velja
 
 Podatke sem s pomočjo datoteke xml.r uvozila in jih združila s funkcijo rbind v preglednico maraton. Ker sta bila zadnja dva stolpca brezpomenska, sem ju izbrisala, dodala pa sem nov stolpec, ki bo določal spol tekomovalca. Prav tako sem s pomočjo funckije casvsekunde čas, ki je bil podan v urah in minutah, ter ločen s podpičji, spremenila v čas, ki je določen samo s sekundami, kar mi bo gotovo koristilo pri nadaljni obravnavi podatkov v sledečih fazah.
 
-Z grafom sem ponazorila razmerje držav iz katerih prihajajo maratonci. Vidimo, da jih največ prihaja iz Združenih držav Amerike ter Velike Britanije, kar je razmeroma logično, saj gre za razviti državi z veliko populacije. 
-Drugi graf se nanaša na razmerje med spoloma. Očitno so rekord večkrat podrli moški. 
-
-V prihodnjih fazah pa bom uvozila tudi grafe, ki bodo nakazovali spreminjanje rekorda s časom.
+Želela sem izvedeti iz katerih držav prihaja največ maratoncev. Pri tem sem si pomagala z grafom in ugotovila, da jih največ prihaja iz Združenih držav Amerike ter Velike Britanije, kar je razmeroma logično, saj gre za razviti državi z veliko populacije. 
 
 \includegraphics[width=\textwidth]{../slike/graf1.pdf}
+Drugi graf se nanaša na razmerje med spoloma. Očitno so rekord večkrat podrli moški, kar pa tudi potrdi našo hipotezo. 
 
 \includegraphics[width=\textwidth]{../slike/graf2.pdf}
 
 \section{Analiza in vizualizacija podatkov}
 
-V tretji fazi je naša naloga bila, da dva podatka, imenskega ali urejenostnega ter številskega podamo na zemljevidu. 
-Odločila sem se, da bom preučila kolikokrat je bil na posameznem maratonu postavljen rekord in to na zemljevidu predstavila kot številko spremenjlivko - jakost barve bo določala število, močnejša bo barva, večkrat je bil podrt rekord in obratno. Za ta namen je bilo potrebno podatke malo preurediti. Iz stolpca Kraj sem zato izluščila države maratonov. Razberemo lahko, da je bil rekord maratona največkrat postavljen v Združenih Državah Amerike, nato v Veliki Britaniji, Nemčiji, Japonski, na Nizozemskem in tako naprej. Razlog zato je morda tudi priljubljenost teh maratonov, saj maratoni v Londonu, Bostonu, New Yorku, Berlinu in Parizu veljajo za ene izmed najbolj zanimivih na svetu in imajo posledično tudi veliko številko tekmovalcev, kar pa še poveča možnost za nov rekord. Prav tako menim, da bo imel maraton v Bostonu zaradi tragičnih dogokov leta 2013 skozi leta še večji obisk, ker nekaterim udejstvovanje pomeni veliko več, kot le preteči 42 kilometov.
+V tretji fazi je bila naša naloga, da dva podatka, imenskega ali urejenostnega ter številskega podamo na zemljevidu. 
+Odločila sem se, da bom preučila kolikokrat je bil na posameznem maratonu postavljen rekord in to na zemljevidu predstavila kot številko spremenjlivko - jakost barve bo določala število, močnejša bo barva, večkrat je bil podrt rekord in obratno. Za ta namen je bilo potrebno podatke malo preurediti. Iz stolpca Kraj sem zato izluščila države maratonov. 
+Razberemo lahko, da je bil rekord maratona največkrat postavljen v Združenih Državah Amerike, nato v Veliki Britaniji, Nemčiji, Japonski, na Nizozemskem in tako naprej. Razlog zato je morda tudi priljubljenost teh maratonov, saj maratoni v Londonu, Bostonu, New Yorku, Berlinu in Parizu veljajo za ene izmed najbolj zanimivih na svetu in imajo posledično tudi veliko številko tekmovalcev, kar pa še poveča možnost za nov rekord. Prav tako menim, da bo imel maraton v Bostonu zaradi tragičnih dogokov leta 2013 skozi leta še večji obisk, ker nekaterim udejstvovanje pomeni veliko več, kot le preteči 42 kilometov.
+
+\includegraphics[width=\textwidth]{../slike/maraton_svet1.pdf}
 
 Za imenski ali urejenostni podatek pa sem analizirala ali je rekord maratona večkrat postavil državljan države, kjer se je odvil dogodek, tujec, ali sta ga oba postavila enakokrat. Torej, če je državljan večkrat postavil rekord, bo država, kjer se je odvil maraton obarvana z modro, če tujec z rdečo in nazadnje z zeleno, če sta rekord oba postavila enakokrat.
 Ker sem pri številski spremenljivki že dobila države maratonov, je bilo ugotavljanje, ali se država ujema z državljanstvom, lažje.
-N
-azadnje sem na zemjevid dodala še oznake. Na zemljevidu sem označila nekatera glavna mesta, kjer so se odvijali maratoni, na začetku sem imela nekaj težav s postavljanjem prave zemljepisne dolžine in širine, a sem to potem uredila.
+Nazadnje sem na zemjevid dodala še oznake. Na zemljevidu sem označila nekatera glavna mesta, kjer so se odvijali maratoni, na začetku sem imela nekaj težav s postavljanjem prave zemljepisne dolžine in širine, a sem to potem uredila.
 
-\includegraphics[width=\textwidth]{../slike/maraton_svet1.pdf}
 
 \includegraphics[width=\textwidth]{../slike/maraton_svet2.pdf}
 
 \section{Napredna analiza podatkov}
 
-%\includegraphics{../slike/naselja.pdf}
+Za četrto fazo sem se odločila iz podatkov razbrati še nekaj informacij. Najprej sem se odločila, da narišem graf, ki prikazuje spreminjanje rekorda maratona skozi čas, kar je pravzaprav tudi naslov mojega projetka. Ker sem tekom projekta pridobila nekaj izkušenj, je bilo risanje tega grafa precej lažje kot risanje grafov v drugi fazi.
+
+Z priemrjavo podatkov v tabeli sem ugtovila, da mi graf ne prikaže pravilnega razmerja. To bom popravila v naslednjih dneh.
+
+\includegraphics[width=\textwidth]{../slike/graf4.pdf}
 
 \end{document}
