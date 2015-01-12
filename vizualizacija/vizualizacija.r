@@ -74,8 +74,8 @@ imena <- c("London", "New York", "Tokyo")
 mesta <- data.frame("long" = c(-0.13, -74.01, 139.75), "lat"= c(51.51, 40.71,35.68))
 text(coordinates(mesta),
      labels = imena,
-     pos = 1, cex = 0.6,)
-points(coordinates(mesta), type = "p", pch = 15, cex = 0.4, col = "yellow")
+     pos = c(2,4,1), cex = 0.6,)
+points(coordinates(mesta), type = "p", pch = 15, cex = 0.4, col = "green")
 
 
 
@@ -165,8 +165,8 @@ imena <- c("London", "New York", "Tokyo")
 mesta <- data.frame("long" = c(-0.13, -74.01, 139.75), "lat"= c(51.51, 40.71,35.68))
 text(coordinates(mesta),
      labels = imena,
-      pos = 1, cex = 0.6,)
-points(coordinates(mesta), type = "p", pch = 15, cex = 0.4, col = "yellow")
+     pos = c(2,4,1), cex = 0.6,)
+points(coordinates(mesta), type = "p", pch = 15, cex = 0.4, col = "pink")
 
 
 
