@@ -47,15 +47,3 @@ plot(as.Date(moski$Date, "%b %d, %Y"), cas, main = "Spreminjanje rekorda skozi �
 #ki jo R razume kot datum
 
 dev.off()
-
-# Tukaj si lahko pomagaš s funkcijo as.Date, ki nize pretvori v obliko, 
-# ki jo R razume kot datum. Najprej bo potrebno dopovedati, naj uporablja angleška imena mesecev:
-#   
-#   Sys.setlocale("LC_TIME", "C")
-# 
-# Potem lahko pretvorjene datume neposredno uporabiš v grafu:
-#   
-#   plot(as.Date(maraton$Datum, "%b %d, %Y"), cas, main = "Spreminjanje rekorda skozi čas", 
-#        xlab = "Letnica maratona", ylab = "Čas v sekundah", type = "h", lwd = 5, col = "steelblue")
-# 
-# Tukaj bi seveda koristilo, če ločiš moške in ženske rekorde - bodisi z različnimi barvami, ali pa narišeš dva graf
