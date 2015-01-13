@@ -47,3 +47,6 @@ plot(as.Date(moski$Date, "%b %d, %Y"), cas, main = "Spreminjanje rekorda skozi Ä
 #ki jo R razume kot datum
 
 dev.off()
+
+
+
