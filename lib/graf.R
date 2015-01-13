@@ -7,7 +7,7 @@ drzave <- table(maraton$Drzavljanstvo)
 drzave <- drzave[order(drzave, decreasing=TRUE)]
 druge <- drzave < 3 
 drzave <- c(drzave[!druge], "Druge" = sum(drzave[druge]))
-pie(drzave, main="Državljanstva maratoncev", clockwise = TRUE, cex = 1)
+pie(drzave, main="Drzavljanstva maratoncev", clockwise = TRUE, cex = 1)
 
 
 
