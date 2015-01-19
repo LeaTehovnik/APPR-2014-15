@@ -19,11 +19,34 @@ source("lib/xml.r")
 pdf("slike/graf4.pdf")
 pdf.options(encoding='ISOLatin2.enc')
 
-cas <- maraton$Čas
-datum <- names(table(maraton$Datum))
+
+Sys.setlocale("LC_TIME", "C") # naj uporablja angleška imena mesecev:
+cas <- zenske$Time
+datum <- names(table(zenske$Date))
 leto <- gsub(".*, ", "", datum)
 names(leto) <- datum
-plot(leto, cas, main = "Spreminjanje rekorda skozi čas", 
-     xlab = "Letnica maratona", ylab = "Čas v sekundah", type = "h", lwd = 5, col = "steelblue")
+plot(as.Date(zenske$Date, "%b %d, %Y"), cas, main = "Spreminjanje rekorda skozi čas", 
+     xlab = "Letnica maratona", ylab = "Čas v sekundah", type = "h", lwd = 5, col = "pink")
+#as.Date, ki nize pretvori v obliko, 
+#ki jo R razume kot datum
 
 dev.off()
+
+pdf("slike/graf5.pdf")
+pdf.options(encoding='ISOLatin2.enc')
+
+
+Sys.setlocale("LC_TIME", "C") # naj uporablja angleška imena mesecev:
+cas <- moski$Time
+datum <- names(table(moski$Date))
+leto <- gsub(".*, ", "", datum)
+names(leto) <- datum
+plot(as.Date(moski$Date, "%b %d, %Y"), cas, main = "Spreminjanje rekorda skozi čas", 
+     xlab = "Letnica maratona", ylab = "Čas v sekundah", type = "h", lwd = 5, col = "steelblue")
+#as.Date, ki nize pretvori v obliko, 
+#ki jo R razume kot datum
+
+dev.off()
+
+
+
