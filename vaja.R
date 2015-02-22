@@ -13,16 +13,32 @@ plot(datum1, cas, main = "Spreminjanje rekorda skozi čas",
 #as.Date, ki nize pretvori v obliko, 
 #ki jo R razume kot datum
 datum1 <- as.Date(moski$Date, "%b %d, %Y") 
+novi.datumi <- gsub("-", "", datum1)
 
-#Regresijo lahko uporabimo tudi za nelinearne modele.
+#Z regresijo preverimo, kako se kaj ujemajo naši modeli
+#Npišemo funkcijo za linearno rast
 
-z <- lowess(datum1, cas)
+linearna <- lm(cas ~ datt)
+abline(linearna, col="blue")
+
+#Preverimo če je populacija kvadratna funkcija
+
+kvadratna <- lm(cas ~ I(datt^2) + datt)
+curve(predict(kvadratna, data.frame(datt=x)), add = TRUE, col = "red")  
+
+#Loess model za primerjavo (model loess uporablja lokalno prilagajanje)
+
+z <- loess(cas ~ datt)
 points(z, col = "green", cex = 0.7)
 lines(z, col = "green")
+curve(predict(z, data.frame(datt=x)),add=TRUE,col="orange")
+#Pogledamo ostanke pri modelih. Tisti, ki ima manjši ostanek je bolj natančen
 
-lin <- lm(cas ~ datum1)
-abline(lin, col="darkviolet")
+vsota.kvadratov <- sapply(list(linearna, kvadratna, z), function(x) sum(x$residuals^2))
 
-kv <- lm(cas ~ I(datum1^2) + datum1)
+
+
+
+
 #curve(predict(lin, data.frame(datum1 = x)), add= TRUE, col = "red")
 dev.off()
