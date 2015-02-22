@@ -14,6 +14,7 @@ plot(datum1, cas, main = "Spreminjanje rekorda skozi čas",
 #ki jo R razume kot datum
 datum1 <- as.Date(moski$Date, "%b %d, %Y") 
 novi.datumi <- gsub("-", "", datum1)
+datt <- as.numeric(novi.datumi)
 
 #Z regresijo preverimo, kako se kaj ujemajo naši modeli
 #Npišemo funkcijo za linearno rast
