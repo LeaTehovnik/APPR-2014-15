@@ -16,7 +16,7 @@ datum1 <- as.Date(moski$Date, "%b %d, %Y")
 novi.datumi <- gsub("-", "", datum1)
 datt <- as.numeric(novi.datumi)
 
-#Z regresijo preverimo, kako se kaj ujemajo naši modeli
+#Krivulje, ki se najbolj prilegajo rekordom
 #Npišemo funkcijo za linearno rast
 
 linearna <- lm(cas ~ datt)
