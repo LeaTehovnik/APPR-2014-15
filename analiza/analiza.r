@@ -49,4 +49,4 @@ plot(as.Date(moski$Date, "%b %d, %Y"), cas, main = "Spreminjanje rekorda skozi Ä
 dev.off()
 
 
-
+##NAPOVED
