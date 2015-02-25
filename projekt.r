@@ -4,6 +4,9 @@ source("clearpdf.r", encoding = "UTF-8")
 source("fontconfig.r",encoding = "UTF-8")
 pdf.options(family = "Helvetica")
 
+#vključitev funkcije prevod
+source("lib/prevod.R",encoding="UTF-8")
+
 # 2. faza: Obdelava, uvoz in čiščenje podatkov
 source("uvoz/uvoz.r",encoding="UTF-8")
 source("lib/graf.R",encoding="UTF-8")

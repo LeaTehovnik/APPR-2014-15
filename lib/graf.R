@@ -7,13 +7,8 @@ drzave <- table(maraton$Drzavljanstvo)
 drzave <- drzave[order(drzave, decreasing=TRUE)]
 druge <- drzave < 3 
 drzave <- c(drzave[!druge], "Druge" = sum(drzave[druge]))
-pie(drzave, main="Drzavljanstva maratoncev", clockwise = TRUE, cex = 1)
-
-#pretvorba angleščkih imen v slovenska
-# slovenska <- c("ZDA", "Velika Britanija", "Japonska", "Kenija", "Norveška", "Etiopija",
-#                "Nemčija", "Avstralija", "Francija")
-# prave <- drzave[!druge]
-# names(prave)[1:9] <- slovenska
+pie(drzave, labels = prevedi(names(drzave)),
+    main="Drzavljanstva maratoncev", clockwise = TRUE, cex = 1)
 
 dev.off()
 
