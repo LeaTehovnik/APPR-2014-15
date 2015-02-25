@@ -9,37 +9,52 @@ leto <- gsub(".*, ", "", datum)
 names(leto) <- datum
 datum1 <- as.Date(moski$Date, "%b %d, %Y") 
 plot(datum1, cas, main = "Spreminjanje rekorda skozi čas", 
-     xlab = "Letnica maratona", ylab = "Čas v sekundah", type = "h", lwd = 5, col = "steelblue")
+     xlim = as.Date(c("1908-01-01", "2050-12-31")),
+     ylim = c(5000, 10518.4),
+     xlab = "Letnica maratona", ylab = "Čas v sekundah", type = "h",
+     lwd = 5, col = "steelblue")
 #as.Date, ki nize pretvori v obliko, 
 #ki jo R razume kot datum
-datum1 <- as.Date(moski$Date, "%b %d, %Y") 
-novi.datumi <- gsub("-", "", datum1)
-datt <- as.numeric(novi.datumi)
 
-#Krivulje, ki se najbolj prilegajo rekordom
-#Npišemo funkcijo za linearno rast
 
+#gledmao datume, ki so pred letom 1981
+novdatum <- datum1[datum1 < as.Date("1981-01-01")]
+#Za lažjo regresijo
+zacetek <- min(datum1)
+datt <- as.numeric(datum1 - zacetek)
+
+datumi.napoved <- as.Date(paste(1908:2050, 1, 1, sep = "-")) # leta, za katera napovedujemo
 linearna <- lm(cas ~ datt)
-abline(linearna, col="blue")
-
-#Preverimo če je populacija kvadratna funkcija
+lines(datumi.napoved,
+      predict(linearna, data.frame(datt=as.numeric(datumi.napoved-zacetek))),
+      col = "blue")
 
 kvadratna <- lm(cas ~ I(datt^2) + datt)
-curve(predict(kvadratna, data.frame(datt=x)), add = TRUE, col = "red")  
+lines(datumi.napoved,
+      predict(kvadratna, data.frame(datt=as.numeric(datumi.napoved-zacetek))),
+      col = "yellow")
 
-#Loess model za primerjavo (model loess uporablja lokalno prilagajanje)
+tretja <- lm(cas ~ I(datt^(3)) + I(datt^2) +datt)
+lines(datumi.napoved,
+      predict(tretja, data.frame(datt=as.numeric(datumi.napoved-zacetek))),
+      col = "orange")
+cetrta <- lm(cas ~ I(datt^(6)) + I(datt^3) +datt)
+lines(datumi.napoved,
+      predict(cetrta, data.frame(datt=as.numeric(datumi.napoved-zacetek))),
+      col = "pink")
 
-z <- loess(cas ~ datt)
-points(z, col = "green", cex = 0.7)
-lines(z, col = "green")
-curve(predict(z, data.frame(datt=x)),add=TRUE,col="orange")
+
+
+
+
+loes <- loess(cas ~ datt)
+lines(datumi.napoved,
+      predict(loes, data.frame(datt=as.numeric(datumi.napoved-zacetek))),
+      col = "red")
+
 #Pogledamo ostanke pri modelih. Tisti, ki ima manjši ostanek je bolj natančen
 
-vsota.kvadratov <- sapply(list(linearna, kvadratna, z), function(x) sum(x$residuals^2))
+vsota.kvadratov <- sapply(list(linearna, kvadratna, tretja, loes), function(x) sum(x$residuals^2))
+#3766024 1198967 1166479 1060280
 
-
-
-
-
-#curve(predict(lin, data.frame(datum1 = x)), add= TRUE, col = "red")
 dev.off()
