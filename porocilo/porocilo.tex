@@ -2,9 +2,11 @@
 
 \usepackage[slovene]{babel}
 \usepackage[utf8x]{inputenc}
+ \usepackage[unicode]{hyperref}
 \usepackage{graphicx}
 \usepackage{pdfpages}
 \usepackage{hyperref}
+\usepackage{float}
 
 \pagestyle{plain}
 
@@ -24,45 +26,56 @@ Moj cilj je analizirati različne podatke, npr. ali je ista oseba postavila reko
 
 Glede na izkušnje predvidevam, da bodo rekord večkrat podrli moški, saj veljajo za fizično močnejše (kar pa seveda ni vedno res). Druga hipoteza je, da bo rekord verjetno največkrat podrt v državah, katere maratoni so svetovno znani, npr. maraton skozi New York, na katerem je tekel tudi marsikateri Slovenec in ima skozi leta vse večjo udeležbo.
 
+\pagebreak
 \section{Obdelava, uvoz in čiščenje podatkov}
 
 Podatke sem s pomočjo datoteke xml.r uvozila in jih združila s funkcijo rbind v preglednico maraton. Ker sta bila zadnja dva stolpca brezpomenska, sem ju izbrisala, dodala pa sem nov stolpec, ki bo določal spol tekomovalca. Prav tako sem s pomočjo funckije casvsekunde čas, ki je bil podan v urah in minutah, ter ločen s podpičji, spremenila v čas, ki je določen samo s sekundami, kar mi bo gotovo koristilo pri nadaljni obravnavi podatkov v sledečih fazah.
 
 Želela sem izvedeti iz katerih držav prihaja največ maratoncev. Pri tem sem si pomagala z grafom in ugotovila, da jih največ prihaja iz Združenih držav Amerike ter Velike Britanije, kar je razmeroma logično, saj gre za razviti državi z veliko populacije. 
 
-\includegraphics[width=\textwidth]{../slike/graf1.pdf}
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{../slike/graf1.pdf}
+  \caption{Državljanstva maratoncev}
+  \label{fig:Slika 1}
+\end{figure}
+
+
 Drugi graf se nanaša na razmerje med spoloma. Očitno so rekord večkrat podrli moški, kar pa tudi potrdi našo hipotezo. 
 
-\includegraphics[width=\textwidth]{../slike/graf2.pdf}
+\begin{figure}[H]
+  \includegraphics[width=\textwidth]{../slike/graf2.pdf}
+  \caption{Razmerje med spoloma}
+  \label{fig:Slika 2}
+\end{figure}
 
+\newpage
 \section{Analiza in vizualizacija podatkov}
 
 V tretji fazi je bila naša naloga, da dva podatka, imenskega ali urejenostnega ter številskega podamo na zemljevidu. 
 Odločila sem se, da bom preučila kolikokrat je bil na posameznem maratonu postavljen rekord in to na zemljevidu predstavila kot številko spremenjlivko - jakost barve bo določala število, močnejša bo barva, večkrat je bil podrt rekord in obratno. Za ta namen je bilo potrebno podatke malo preurediti. Iz stolpca Kraj sem zato izluščila države maratonov. 
 Razberemo lahko, da je bil rekord maratona največkrat postavljen v Združenih Državah Amerike, nato v Veliki Britaniji, Nemčiji, Japonski, na Nizozemskem in tako naprej. Razlog zato je morda tudi priljubljenost teh maratonov, saj maratoni v Londonu, Bostonu, New Yorku, Berlinu in Parizu veljajo za ene izmed najbolj zanimivih na svetu in imajo posledično tudi veliko številko tekmovalcev, kar pa še poveča možnost za nov rekord. Prav tako menim, da bo imel maraton v Bostonu zaradi tragičnih dogokov leta 2013 skozi leta še večji obisk, ker nekaterim udejstvovanje pomeni veliko več, kot le preteči 42 kilometov.
 
-\makebox[\textwidth][c]{
-\includegraphics[width=1.2\textwidth]{../slike/maraton_svet1.pdf}
-<<<<<<< HEAD
-}
-=======
-} 
-
->>>>>>> 1f1764492b3b57e41bc5fdf531e5ac20c5817306
+\begin{figure}[H]
+  \makebox[\textwidth][c]{
+  \includegraphics[width=1.2\textwidth]{../slike/maraton_svet1.pdf}
+  }
+  \caption{Število postavljenih rekordov}
+  \label{fig:Zemljevid 1}
+\end{figure}
 
 Za imenski ali urejenostni podatek pa sem analizirala ali je rekord maratona večkrat postavil državljan države, kjer se je odvil dogodek, tujec, ali sta ga oba postavila enakokrat. Torej, če je državljan večkrat postavil rekord, bo država, kjer se je odvil maraton obarvana z modro, če tujec z rdečo in nazadnje z zeleno, če sta rekord oba postavila enakokrat.
 Ker sem pri številski spremenljivki že dobila države maratonov, je bilo ugotavljanje, ali se država ujema z državljanstvom, lažje.
 Nazadnje sem na zemjevid dodala še oznake. Na zemljevidu sem označila nekatera glavna mesta, kjer so se odvijali maratoni, na začetku sem imela nekaj težav s postavljanjem prave zemljepisne dolžine in širine, a sem to potem uredila.
 
-\makebox[\textwidth][c]{
-\includegraphics[width=1.2\textwidth]{../slike/maraton_svet2.pdf}
-<<<<<<< HEAD
-}
-=======
-} 
+\begin{figure}[H]
+  \makebox[\textwidth][c]{
+  \includegraphics[width=1.2\textwidth]{../slike/maraton_svet2.pdf}
+  }
+  \caption{Ujemanje državljanstva z državo}
+  \label{fig:Zemljevid 2}
+\end{figure}
 
->>>>>>> 1f1764492b3b57e41bc5fdf531e5ac20c5817306
-
+\newpage
 \section{Napredna analiza podatkov}
 
 Za četrto fazo sem se odločila iz podatkov razbrati še nekaj informacij. Najprej sem se odločila, da narišem graf, ki prikazuje spreminjanje rekorda maratona skozi čas, kar je pravzaprav tudi naslov mojega projetka. Ker sem tekom projekta pridobila nekaj izkušenj, je bilo risanje tega grafa precej lažje kot risanje grafov v drugi fazi.
@@ -76,10 +89,39 @@ Sledilo je obdobje hladne vojne, leta 1961 so postavili Berlinski zid, zato ne p
 Od sredine osemdesetih pa do konca hladne vojne(tj. 1990 z razapadom Sovjetske zveze) je bilo spet obdobje, ko ni bil postavljen noben rekord, predvidevam, da delno tudi zaradi gospodarskih in družebnih razlogov, spomnimo se npr., da je bil elta 1989 podrt Berlinski zid.
 V današnji dobi je bil zadnji rekord podrt leta 2003. To je uspelo Pauli Radcliffe in sicer že drugo leto zapored.
 Predvidevam, da bodo razliek v rekordih z leti vse manjše, saj je potrebna res ogromna fizična vzdržljivost, da  pretečeš 42 kilometrov v tako malo časa. Človeško telo lahko treniraš do neke meje, a mislim, da bo rekord vse težje postaviti, saj je čas že sedaj nastavljen zelo nizko.
-\includegraphics[width=\textwidth]{../slike/graf4.pdf}
+
+\begin{figure}[H]
+  \makebox[\textwidth][c]{
+  \includegraphics[width=1.2\textwidth]{../slike/graf4.pdf}
+  }
+  \caption{Spreminjanje moškega rekorda s časom}
+  \label{fig:Slika 4}
+\end{figure}
 
 Pri moški je sitaucija malo bolj raznolika, predvsem ni tako velikih prepadov kot pri ženskah. Kljub temu lahko prav tako zaznamo tri in sicer v obdobju med in po 1. svetovni vojni, v obdobju pred in po 2. svetovno vojno in tik pred koncem hladne vojne. Razlogi so podobni kot pri ženskah, saj gre za isto časovno obodbje, družbo, politično situacijo , zato tudi ne preseneča, da sta si grafa vizualno dokaj podobna. Opazimo edino, da moški tudi v današnji dobi pridno podirajo rekorde, zadnje je bil namreč podrt kar leta 2014, sicer pa je bil rekrod zadnjih 6 let podrt prav v Berlinu, kar se v zgodovini sicer ni zgodilo velikrat, verjetno zaradi delitve Nemške države.
 Prav tako vidimo, da so razlike v maratonih v zadnjih 20 letih precej majhne, vzrok za to tiči(kot se omenila že zgoraj) predvsem v tem, da človeško telo lahko doseže le neko mejo fizične pripavljenosti, več kot to pa zelo težko.
-\includegraphics[width=\textwidth]{../slike/graf5.pdf}
+
+\begin{figure}[H]
+  \makebox[\textwidth][c]{
+  \includegraphics[width=1.2\textwidth]{../slike/graf5.pdf}
+  }
+  \caption{Spreminjanje ženskega rekorda s časom}
+  \label{fig:Slika 4}
+\end{figure}
+
+\newpage
+\begin{thebibliography}{3}
+\bibitem{1}
+  \url{http://en.wikipedia.org/wiki/Marathon_world_record_progression}\\
+  {Accessed: 25-02-2015}
+\bibitem{2}
+  \url{http://en.wikipedia.org/wiki/20th_century#Wars_and_politics}\\
+  {Accessed: 25-02-2015}
+\bibitem{2}
+  \url{http://en.wikipedia.org/wiki/Cold_War}\\
+  {Accessed: 25-02-2015}
+
+
+\end{thebibliography}
 
 \end{document}
