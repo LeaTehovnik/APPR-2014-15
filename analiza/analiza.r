@@ -88,7 +88,7 @@ legend("topright", c("Linerana metoda", "Kvadratna metoda","Kubična metoda",
        col = c("blue","yellow","orange", "purple", "red", "cyan"))
 
 #Pogledamo ostanke pri modelih. Tisti, ki ima manjši ostanek je bolj natančen
-vsota.kvadratov <- sapply(list(linearna.zenske, kvadratna.zenske, tretja
+vsota.kvadratov <- sapply(list(linearna.zenske, kvadratna.zenske, tretja.zenske
                                , llin.zenske, loes.zenske, mgam.zenske), function(x) sum(x$residuals^2))
 # 3.910234e+07 2.954300e+07 1.166479e+06 2.064928e-01 1.084761e+07 8.772608e+05
 
