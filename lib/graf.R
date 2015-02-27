@@ -1,5 +1,4 @@
-pdf("slike/graf1.pdf")
-pdf.options(family = "Helvetica")
+cairo_pdf("slike/graf1.pdf", width = 9.27, height = 11.69, family = "Arial") 
 #Graf, ki prikazuje delež držav, iz katerih so maratonci
 
 #drzave, kjer so manj kot trije maratonci, sem združila v druge
@@ -8,7 +7,7 @@ drzave <- drzave[order(drzave, decreasing=TRUE)]
 druge <- drzave < 3 
 drzave <- c(drzave[!druge], "Druge" = sum(drzave[druge]))
 pie(drzave, labels = prevedi(names(drzave)),
-    main="Drzavljanstva maratoncev", clockwise = TRUE, cex = 1)
+    main="Državljanstva maratoncev", clockwise = TRUE, cex = 1)
 
 dev.off()
 

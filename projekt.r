@@ -2,7 +2,8 @@
 silent <- TRUE
 source("clearpdf.r", encoding = "UTF-8")
 source("fontconfig.r",encoding = "UTF-8")
-pdf.options(family = "Helvetica")
+pdf.options(family = "Arial")
+library(extrafont)
 
 #vključitev funkcije prevod
 source("lib/prevod.R",encoding="UTF-8")

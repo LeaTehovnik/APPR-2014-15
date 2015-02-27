@@ -17,8 +17,7 @@ source("lib/xml.r")
 # dev.off()
 
 #NAPOVED ŽENSKE
-pdf("slike/graf4.pdf")
-pdf.options(encoding='ISOLatin2.enc')
+cairo_pdf("slike/graf4.pdf", width = 9.27, height = 11.69, family = "Arial") 
 
 
 
@@ -95,8 +94,7 @@ vsota.kvadratov <- sapply(list(linearna.zenske, kvadratna.zenske, tretja.zenske
 dev.off()
 
 #NAPOVED MOŠKI
-pdf("slike/graf5.pdf")
-pdf.options(encoding='ISOLatin2.enc')
+cairo_pdf("slike/graf5.pdf", width = 9.27, height = 11.69, family = "Arial") 
 
 
 Sys.setlocale("LC_TIME", "C") # naj uporablja angleška imena mesecev:

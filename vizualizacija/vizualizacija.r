@@ -59,7 +59,8 @@ maraton$Drzava <- maratoni[maraton$Kraj]
 
 # Narišimo zemljevid v PDF.
 cat("Rišem zemljevid...\n")
-pdf("slike/maraton_svet1.pdf", width=6, height=4)
+cairo_pdf("slike/maraton_svet1.pdf", width = 9.27, height = 11.69, family = "Arial") 
+
 
 
 #še pobarvati
@@ -154,7 +155,8 @@ barve[names(which(enako))] <- "green"
 
 # Narišimo zemljevid v PDF.
 cat("Rišem zemljevid...\n")
-pdf("slike/maraton_svet2.pdf", width=6, height=4)
+cairo_pdf("slike/maraton_svet2.pdf", width = 9.27, height = 11.69, family = "Arial") 
+
 
 
 n = 100

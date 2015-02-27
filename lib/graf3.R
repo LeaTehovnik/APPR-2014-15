@@ -2,8 +2,7 @@
 #postavljen rekord. Potem pa bom te podatke še pokazala na zemljevidu
 
   
-pdf("slike/graf3.pdf")
-pdf.options(encoding='ISOLatin2.enc')
+cairo_pdf("slike/graf3.pdf", width = 9.27, height = 11.69, family = "Arial") 
 
 
 kraj <- table(maraton$Kraj)
