@@ -61,6 +61,7 @@ maraton$Drzava <- maratoni[maraton$Kraj]
 cat("Rišem zemljevid...\n")
 pdf("slike/maraton_svet1.pdf", width=6, height=4)
 
+
 #še pobarvati
 rekordi <- table(maraton$Drzava)
 rekordiveni <- unique(rekordi)
@@ -154,6 +155,7 @@ barve[names(which(enako))] <- "green"
 # Narišimo zemljevid v PDF.
 cat("Rišem zemljevid...\n")
 pdf("slike/maraton_svet2.pdf", width=6, height=4)
+
 
 n = 100
 
