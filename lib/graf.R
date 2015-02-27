@@ -1,4 +1,4 @@
-cairo_pdf("slike/graf1.pdf", width = 9.27, height = 11.69, family = "Arial") 
+cairo_pdf("slike/graf1.pdf", width = 7, height = 7, family = "Arial") 
 #Graf, ki prikazuje delež držav, iz katerih so maratonci
 
 #drzave, kjer so manj kot trije maratonci, sem združila v druge

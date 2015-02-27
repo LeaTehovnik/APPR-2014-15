@@ -59,7 +59,7 @@ maraton$Drzava <- maratoni[maraton$Kraj]
 
 # Narišimo zemljevid v PDF.
 cat("Rišem zemljevid...\n")
-cairo_pdf("slike/maraton_svet1.pdf", width = 9.27, height = 11.69, family = "Arial") 
+cairo_pdf("slike/maraton_svet1.pdf", width = 7.27, height = 5.69, family = "Arial") 
 
 
 
@@ -78,10 +78,6 @@ text(coordinates(mesta),
      labels = imena,
      pos = c(2,4,1), cex = 0.6,)
 points(coordinates(mesta), type = "p", pch = 15, cex = 0.4, col = "green")
-
-
-
-
 
 dev.off()
 
@@ -155,7 +151,7 @@ barve[names(which(enako))] <- "green"
 
 # Narišimo zemljevid v PDF.
 cat("Rišem zemljevid...\n")
-cairo_pdf("slike/maraton_svet2.pdf", width = 9.27, height = 11.69, family = "Arial") 
+cairo_pdf("slike/maraton_svet2.pdf", width = 7.27, height = 5.69, family = "Arial") 
 
 
 

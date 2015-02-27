@@ -1,4 +1,4 @@
-cairo_pdf("slike/graf2.pdf", width = 9.27, height = 11.69, family = "Arial") 
+cairo_pdf("slike/graf2.pdf", width = 7.27, height = 5.69, family = "Arial") 
 
 
 

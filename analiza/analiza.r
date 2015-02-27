@@ -17,7 +17,7 @@ source("lib/xml.r")
 # dev.off()
 
 #NAPOVED ŽENSKE
-cairo_pdf("slike/graf4.pdf", width = 9.27, height = 11.69, family = "Arial") 
+cairo_pdf("slike/graf4.pdf", width = 7.27, height = 5.69, family = "Arial") 
 
 
 
@@ -49,17 +49,9 @@ datumi.napoved.zenske <- as.Date(paste(1918:2050, 1, 1, sep = "-")) # leta, za k
 linearna.zenske <- lm(cas.zenske ~ datt.zenske)
 lines(datumi.napoved.zenske,
       predict(linearna.zenske, data.frame(datt.zenske=as.numeric(datumi.napoved.zenske-zacetek.zenske))),
-      col = "blue")
-#KVADRATNA
-kvadratna.zenske <- lm(cas.zenske ~ I(datt.zenske^2) + datt.zenske)
-lines(datumi.napoved.zenske,
-      predict(kvadratna.zenske, data.frame(datt.zenske=as.numeric(datumi.napoved.zenske-zacetek.zenske))),
       col = "yellow")
-#KUBIČNA
-tretja.zenske <- lm(cas.zenske ~ I(datt.zenske^(3)) + I(datt.zenske^2) +datt.zenske)
-lines(datumi.napoved.zenske,
-      predict(tretja.zenske, data.frame(datt.zenske=as.numeric(datumi.napoved.zenske-zacetek.zenske))),
-      col = "orange")
+
+
 
 #EKSPONENTNI MODEL
 logcas.zenske <- log(cas.zenske)
@@ -82,19 +74,19 @@ lines(datumi.napoved.zenske,
       predict(mgam.zenske, data.frame(datt.zenske=as.numeric(datumi.napoved.zenske-zacetek.zenske))), 
       col = "cyan")
 
-legend("topright", c("Linerana metoda", "Kvadratna metoda","Kubična metoda",
+legend("topright", c("Linerana metoda", 
                      "Eksponentna medtoda", "Loess", "Gam"),lty=c(1,1,1),
-       col = c("blue","yellow","orange", "purple", "red", "cyan"))
+       col = c("yellow", "purple", "red", "cyan"))
 
 #Pogledamo ostanke pri modelih. Tisti, ki ima manjši ostanek je bolj natančen
-vsota.kvadratov <- sapply(list(linearna.zenske, kvadratna.zenske, tretja.zenske
-                               , llin.zenske, loes.zenske, mgam.zenske), function(x) sum(x$residuals^2))
-# 3.910234e+07 2.954300e+07 1.166479e+06 2.064928e-01 1.084761e+07 8.772608e+05
+vsota.kvadratov <- sapply(list(linearna.zenske, 
+                               llin.zenske, loes.zenske, mgam.zenske), function(x) sum(x$residuals^2))
+# 3.910234e+07  2.064928e-01 1.084761e+07 8.772608e+05
 
 dev.off()
 
 #NAPOVED MOŠKI
-cairo_pdf("slike/graf5.pdf", width = 9.27, height = 11.69, family = "Arial") 
+cairo_pdf("slike/graf5.pdf", width = 7.27, height = 5.69, family = "Arial") 
 
 
 Sys.setlocale("LC_TIME", "C") # naj uporablja angleška imena mesecev:
@@ -125,17 +117,8 @@ datumi.napoved <- as.Date(paste(1908:2050, 1, 1, sep = "-")) # leta, za katera n
 linearna <- lm(cas ~ datt)
 lines(datumi.napoved,
       predict(linearna, data.frame(datt=as.numeric(datumi.napoved-zacetek))),
-      col = "blue")
-#KVADRATNA
-kvadratna <- lm(cas ~ I(datt^2) + datt)
-lines(datumi.napoved,
-      predict(kvadratna, data.frame(datt=as.numeric(datumi.napoved-zacetek))),
       col = "yellow")
-#KUBIČNA
-tretja <- lm(cas ~ I(datt^(3)) + I(datt^2) +datt)
-lines(datumi.napoved,
-      predict(tretja, data.frame(datt=as.numeric(datumi.napoved-zacetek))),
-      col = "orange")
+
 
 #EKSPONENTNI MODEL
 logcas <- log(cas)
@@ -158,13 +141,13 @@ lines(datumi.napoved,
       predict(mgam, data.frame(datt=as.numeric(datumi.napoved-zacetek))), 
       col = "cyan")
 
-legend("topright", c("Linerana metoda", "Kvadratna metoda","Kubična metoda",
+legend("topright", c("Linerana metoda",
                      "Eksponentna medtoda", "Loess", "Gam"),lty=c(1,1,1),
-       col = c("blue","yellow","orange", "purple", "red", "cyan"))
+       col = c("yellow", "purple", "red", "cyan"))
 
 #Pogledamo ostanke pri modelih. Tisti, ki ima manjši ostanek je bolj natančen
-vsota.kvadratov <- sapply(list(linearna, kvadratna, tretja, llin, loes, mgam), function(x) sum(x$residuals^2))
-# 3.766024e+06 1.198967e+06 1.166479e+06 3.912026e-02 1.060280e+06 6.401781e+05
+vsota.kvadratov <- sapply(list(linearna, llin, loes, mgam), function(x) sum(x$residuals^2))
+# 3.766024e+06  3.912026e-02 1.060280e+06 6.401781e+05
 
 dev.off()
 
