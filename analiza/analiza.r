@@ -64,7 +64,7 @@ lines(datumi.napoved.zenske,
       predict(mgam.zenske, data.frame(datt.zenske=as.numeric(datumi.napoved.zenske-zacetek.zenske))), 
       col = "cyan")
 
-legend("topright", c("Linerana metoda", 
+legend("topright", c("Linearna metoda", 
                      "Eksponentna medtoda", "Loess", "Gam"),lty=c(1,1,1),
        col = c("yellow", "purple", "red", "cyan"))
 
@@ -132,7 +132,7 @@ lines(datumi.napoved,
       predict(mgam, data.frame(datt=as.numeric(datumi.napoved-zacetek))), 
       col = "cyan")
 
-legend("topright", c("Linerana metoda",
+legend("topright", c("Linearna metoda",
                      "Eksponentna medtoda", "Loess", "Gam"),lty=c(1,1,1),
        col = c("yellow", "purple", "red", "cyan"))
 
