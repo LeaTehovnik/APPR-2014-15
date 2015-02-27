@@ -3,20 +3,10 @@
 # Uvozimo funkcijo za uvoz spletne strani.
 source("lib/xml.r")
 
-# # Preberemo spletno stran v razpredelnico.
-# cat("Uvažam spletno stran...\n")
-# tabela <- preuredi(uvozi.obcine(), obcine)
-# 
-# # Narišemo graf v datoteko PDF.
-# cat("Rišem graf...\n")
-# pdf("slike/naselja.pdf", width=6, height=4)
-# plot(tabela[[1]], tabela[[4]],
-#      main = "Število naselij glede na površino občine",
-#      xlab = "Površina (km^2)",
-#      ylab = "Št. naselij")
-# dev.off()
+
 
 #NAPOVED ŽENSKE
+cat("Rišem graf...\n")
 cairo_pdf("slike/graf4.pdf", width = 7.27, height = 5.69, family = "Arial") 
 
 
@@ -86,6 +76,7 @@ vsota.kvadratov <- sapply(list(linearna.zenske,
 dev.off()
 
 #NAPOVED MOŠKI
+cat("Rišem graf...\n")
 cairo_pdf("slike/graf5.pdf", width = 7.27, height = 5.69, family = "Arial") 
 
 
