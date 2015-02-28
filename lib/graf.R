@@ -11,6 +11,3 @@ pie(drzave, labels = prevedi(names(drzave)),
 
 dev.off()
 
-#Igranje z grafi, morda mi bo koristilo pri naslednjih fazah.
-#plot(maraton$Date, maraton$Time, type = "p", main = "Spreminjanje rekorda s časom",
-#col = "red")

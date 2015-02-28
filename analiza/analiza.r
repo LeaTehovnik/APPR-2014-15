@@ -57,16 +57,11 @@ lines(datumi.napoved.zenske,
       predict(loes.zenske, data.frame(datt.zenske=as.numeric(datumi.napoved.zenske-zacetek.zenske))),
       col = "red")
 
-#GAM
-library(mgcv)
-mgam.zenske <- gam(cas.zenske ~ s(datt.zenske))
-lines(datumi.napoved.zenske,
-      predict(mgam.zenske, data.frame(datt.zenske=as.numeric(datumi.napoved.zenske-zacetek.zenske))), 
-      col = "cyan")
+
 
 legend("topright", c("Linearna metoda", 
-                     "Eksponentna medtoda", "Loess", "Gam"),lty=c(1,1,1),
-       col = c("yellow", "purple", "red", "cyan"))
+                     "Eksponentna medtoda", "Loess"),lty=c(1,1,1),
+       col = c("yellow", "purple", "red"))
 
 #Pogledamo ostanke pri modelih. Tisti, ki ima manjši ostanek je bolj natančen
 vsota.kvadratov <- sapply(list(linearna.zenske, 
