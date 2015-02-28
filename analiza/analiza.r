@@ -65,8 +65,8 @@ legend("topright", c("Linearna metoda",
 
 #Pogledamo ostanke pri modelih. Tisti, ki ima manjši ostanek je bolj natančen
 vsota.kvadratov <- sapply(list(linearna.zenske, 
-                               llin.zenske, loes.zenske, mgam.zenske), function(x) sum(x$residuals^2))
-# 3.910234e+07  2.064928e-01 1.084761e+07 8.772608e+05
+                               llin.zenske, loes.zenske), function(x) sum(x$residuals^2))
+# 3.910234e+07  2.064928e-01 1.084761e+07 
 
 dev.off()
 
