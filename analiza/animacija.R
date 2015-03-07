@@ -54,7 +54,6 @@ text(coordinates(mesta),
 points(coordinates(mesta), type = "p", pch = 15, cex = 0.4, col = "green")
 
 
-
 plot(svet)
 title("Rekord1")
 

@@ -41,6 +41,9 @@ maraton$Notes <- NULL
 maraton$Spol <- c(rep("M", 49), rep("Z",38))
 colnames(maraton) <- c("Čas", "Ime", "Drzavljanstvo", "Datum", "Kraj", "Spol")
 
+maraton$Drzavljanstvo[maraton$Državljanstvo == "West Germany"] <- "Germany"
+maraton$Drzavljanstvo[maraton$Državljanstvo == "Soviet Union"] <- "Russia"
+
 # Preuredimo podatke, da jih bomo lahko izrisali na zemljevid.
 kraji <- names(table(maraton$Kraj))
 maratoni <- gsub(".*, ", "", kraji)
@@ -61,6 +64,11 @@ maratoni["Ryde"] <- "United Kingdom"
 maratoni["Turku Marathon"] <- "Finland"
 maratoni["Yonkers"] <- "United States"
 maratoni["Yonkers,"] <- "United States"
+maratoni["London Marathon"] <- "United Kingdom"
+maratoni["Rotterdam Marathon"] <- "Netherlands"
 maratoni[grep("OR", maratoni)] <- "United States"
 
 maraton$Drzava <- maratoni[maraton$Kraj]
+
+maraton$Drzava[maraton$Drzava == "West Germany"] <- "Germany"
+
