@@ -111,6 +111,37 @@ title("Rekordi leta 1935")
 mesta <- data.frame("long" = c(139.69), "lat" = c(35.69))
 points(coordinates(mesta), type = "p", pch = 19, cex = 4, col = "steelblue")
 
+plot(svet)
+title("Rekordi leta 1947")
+mesta <- data.frame("long" = c(-74.01), "lat" = c(40.71))
+points(coordinates(mesta), type = "p", pch = 19, cex = 1, col = "steelblue")
+
+plot(svet)
+title("Rekordi leta 1952")
+mesta <- data.frame("long" = c(-0.13), "lat" = c(51.51))
+points(coordinates(mesta), type = "p", pch = 19, cex = 1, col = "steelblue")
+
+plot(svet)
+title("Rekordi leta 1953")
+mesta <- data.frame("long" = c(-0.13, 22.27), "lat" = c(51.51, 60.45))
+points(coordinates(mesta), type = "p", pch = 19, cex = 1, col = "steelblue")
+
+plot(svet)
+title("Rekordi leta 1954")
+mesta <- data.frame("long" = c(-0.13), "lat" = c(51.51))
+points(coordinates(mesta), type = "p", pch = 19, cex = 1, col = "steelblue")
+
+plot(svet)
+title("Rekordi leta 1956")
+mesta <- data.frame("long" = c(21.14), "lat" = c(62.30))
+points(coordinates(mesta), type = "p", pch = 19, cex = 1, col = "steelblue")
+
+plot(svet)
+title("Rekordi leta 1958")
+mesta <- data.frame("long" = c(18.05), "lat" = c(59.33))
+points(coordinates(mesta), type = "p", pch = 19, cex = 1, col = "steelblue")
+
+
 
 
 dev.off()
