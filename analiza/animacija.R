@@ -141,6 +141,11 @@ title("Rekordi leta 1958")
 mesta <- data.frame("long" = c(18.05), "lat" = c(59.33))
 points(coordinates(mesta), type = "p", pch = 19, cex = 1, col = "steelblue")
 
+plot(svet)
+title("Rekordi leta 1960")
+mesta <- data.frame("long" = c(12.48), "lat" = c(41.86))
+points(coordinates(mesta), type = "p", pch = 19, cex = 1, col = "steelblue")
+
 
 
 
