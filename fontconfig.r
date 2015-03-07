@@ -6,14 +6,14 @@
 
 library(extrafont)
 
-# Prosim, da uporabljate eno od sledečih vrednosti za parameter family:
-# * "Arial"
-# * "Arial Black"
-# * "Comic Sans MS"
-# * "Courier New"
-# * "Georgia"
-# * "Impact"
-# * "Trebuchet MS"
-# * "Times New Roman"
-# * "Verdana"
-pdf.options(family = "Arial")
+# Uporabimo privzeto pisavo
+pdf.options(family = "Helvetica")
+
+# Funkcija za klic pdf, ki ignorira nastavitev pisave
+mypdf <- function(file, width = 7, height = 7,
+                  family = "Helvetica", onefile = TRUE) {
+  pdf(file, width = width, height = height, onefile = onefile)
+}
+
+# Odkomentiraj, če želiš uporabljati cairo_pdf
+#mypdf <- cairo_pdf

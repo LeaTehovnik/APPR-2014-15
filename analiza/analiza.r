@@ -7,7 +7,7 @@ source("lib/xml.r")
 
 #NAPOVED ŽENSKE
 cat("Rišem graf...\n")
-cairo_pdf("slike/graf4.pdf", width = 7.27, height = 5.69, family = "Arial") 
+mypdf("slike/graf4.pdf", width = 7.27, height = 5.69, family = "Arial") 
 
 
 
@@ -72,7 +72,7 @@ dev.off()
 
 #NAPOVED MOŠKI
 cat("Rišem graf...\n")
-cairo_pdf("slike/graf5.pdf", width = 7.27, height = 5.69, family = "Arial") 
+mypdf("slike/graf5.pdf", width = 7.27, height = 5.69, family = "Arial") 
 
 
 Sys.setlocale("LC_TIME", "C") # naj uporablja angleška imena mesecev:
