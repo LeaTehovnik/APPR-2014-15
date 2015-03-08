@@ -49,7 +49,7 @@ legend("bottom", legend = c("moški 1x", "moški 2x", "moški 3x", "moški 4x", 
 plot(svet)
 title("Rekordi leta 1909")
 mesta <- data.frame("long" = c(-0.13, -74.01, 18.05), "lat" = c(51.51, 40.71,59.33))
-points(coordinates(mesta), type = "p", pch = 19, cex = c(1, 3, 1), col = "steelblue")
+points(coordinates(mesta), type = "p", pch = 19, cex = c(1, 2, 1), col = "steelblue")
 legend("bottom", legend = c("moški 1x", "moški 2x", "moški 3x", "moški 4x", "ženska 1x"),
        col = c("steelblue","steelblue","steelblue","steelblue", "pink"),
        pt.cex = c(1,1.5,2,2.5,1), pch = 19, cex = 0.5, y.intersp = 1.7, horiz = TRUE)
@@ -57,7 +57,7 @@ legend("bottom", legend = c("moški 1x", "moški 2x", "moški 3x", "moški 4x", 
 plot(svet)
 title("Rekordi leta 1913")
 mesta <- data.frame("long" = c(-0.13), "lat" = c(51.51))
-points(coordinates(mesta), type = "p", pch = 19, cex = 2, col = "steelblue")
+points(coordinates(mesta), type = "p", pch = 19, cex = 1.5, col = "steelblue")
 legend("bottom", legend = c("moški 1x", "moški 2x", "moški 3x", "moški 4x", "ženska 1x"),
        col = c("steelblue","steelblue","steelblue","steelblue", "pink"),
        pt.cex = c(1,1.5,2,2.5,1), pch = 19, cex = 0.5, y.intersp = 1.7, horiz = TRUE)
@@ -121,7 +121,7 @@ legend("bottom", legend = c("moški 1x", "moški 2x", "moški 3x", "moški 4x", 
 plot(svet)
 title("Rekordi leta 1935")
 mesta <- data.frame("long" = c(139.69), "lat" = c(35.69))
-points(coordinates(mesta), type = "p", pch = 19, cex = 4, col = "steelblue")
+points(coordinates(mesta), type = "p", pch = 19, cex = 2.5, col = "steelblue")
 legend("bottom", legend = c("moški 1x", "moški 2x", "moški 3x", "moški 4x", "ženska 1x"),
        col = c("steelblue","steelblue","steelblue","steelblue", "pink"),
        pt.cex = c(1,1.5,2,2.5,1), pch = 19, cex = 0.5, y.intersp = 1.7, horiz = TRUE)
