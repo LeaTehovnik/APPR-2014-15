@@ -1,4 +1,4 @@
-mypdf("slike/graf1.pdf", width = 7, height = 7, family = "Arial") 
+mypdf("slike/graf1.pdf", width = 7, height = 6, family = "Arial") 
 #Graf, ki prikazuje delež držav, iz katerih so maratonci
 
 #drzave, kjer so manj kot trije maratonci, sem združila v druge

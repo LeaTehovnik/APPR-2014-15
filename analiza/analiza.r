@@ -51,22 +51,16 @@ lines(datumi.napoved.zenske,
       col = "purple")
 
 
-#LOESS MODEL
-loes.zenske <- loess(cas.zenske ~ datt.zenske)
-lines(datumi.napoved.zenske,
-      predict(loes.zenske, data.frame(datt.zenske=as.numeric(datumi.napoved.zenske-zacetek.zenske))),
-      col = "red")
-
 
 
 legend("topright", c("Linearna metoda", 
-                     "Eksponentna medtoda", "Loess"),lty=c(1,1,1),
-       col = c("yellow", "purple", "red"))
+                     "Eksponentna medtoda"),lty=c(1,1),
+       col = c("yellow", "purple"))
 
 #Pogledamo ostanke pri modelih. Tisti, ki ima manjši ostanek je bolj natančen
 vsota.kvadratov <- sapply(list(linearna.zenske, 
-                               llin.zenske, loes.zenske), function(x) sum(x$residuals^2))
-# 3.910234e+07  2.064928e-01 1.084761e+07 
+                               llin.zenske), function(x) sum(x$residuals^2))
+# 3.910234e+07  2.064928e-01 
 
 dev.off()
 
@@ -114,12 +108,6 @@ lines(datumi.napoved,
       col = "purple")
 
 
-#LOESS MODEL
-loes <- loess(cas ~ datt)
-lines(datumi.napoved,
-      predict(loes, data.frame(datt=as.numeric(datumi.napoved-zacetek))),
-      col = "red")
-
 #GAM
 library(mgcv)
 mgam <- gam(cas ~ s(datt))
@@ -128,12 +116,12 @@ lines(datumi.napoved,
       col = "cyan")
 
 legend("topright", c("Linearna metoda",
-                     "Eksponentna medtoda", "Loess", "Gam"),lty=c(1,1,1),
-       col = c("yellow", "purple", "red", "cyan"))
+                     "Eksponentna medtoda", "Gam"),lty=c(1,1,1),
+       col = c("yellow", "purple", "cyan"))
 
 #Pogledamo ostanke pri modelih. Tisti, ki ima manjši ostanek je bolj natančen
-vsota.kvadratov <- sapply(list(linearna, llin, loes, mgam), function(x) sum(x$residuals^2))
-# 3.766024e+06  3.912026e-02 1.060280e+06 6.401781e+05
+vsota.kvadratov <- sapply(list(linearna, llin, mgam), function(x) sum(x$residuals^2))
+# 3.766024e+06  3.912026e-02  6.401781e+05
 
 dev.off()
 
