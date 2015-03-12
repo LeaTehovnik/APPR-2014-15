@@ -16,4 +16,4 @@ mypdf <- function(file, width = 7, height = 7,
 }
 
 # Odkomentiraj, če želiš uporabljati cairo_pdf
-#mypdf <- cairo_pdf
+mypdf <- cairo_pdf
