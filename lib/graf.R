@@ -1,5 +1,9 @@
-mypdf("slike/graf1.pdf", width = 7, height = 6, family = "Arial") 
+cairo_pdf("slike/graf1.pdf", width = 7, height = 6, family = "Arial") 
 #Graf, ki prikazuje delež držav, iz katerih so maratonci
+
+
+maraton$Drzavljanstvo[maraton$Drzavljanstvo == "West Germany"] <- "Germany"
+
 
 #drzave, kjer so manj kot trije maratonci, sem združila v druge
 drzave <- table(maraton$Drzavljanstvo)

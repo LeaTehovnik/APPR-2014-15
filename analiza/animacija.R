@@ -32,7 +32,7 @@ preuredi <- function(podatki, zemljevid) {
 
 # Narišimo zemljevid v PDF.
 cat("Rišem zemljevid...\n")
-mypdf("porocilo/ani.pdf", width = 8, height = 6, family = "Arial") 
+cairo_pdf("porocilo/ani.pdf", width = 8, height = 6, family = "Arial", onefile = TRUE) 
 
 
 
