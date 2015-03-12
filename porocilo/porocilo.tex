@@ -8,6 +8,8 @@
 \usepackage{hyperref}
 \usepackage{float}
 \usepackage[font=small,skip=0pt]{caption}
+\usepackage{pdfpages}
+\usepackage{animate}
 
 \pagestyle{plain}
 
@@ -34,7 +36,7 @@ Ker del svojega prostega časa namenim tudi teku, sem si za temo mojega projekta
 \end{enumerate}
  
 
-Podatke sem pridobila iz spletne strani Wikipedia, natačneje na naslovu \url{http://en.wikipedia.org/wiki/Marathon_world_record_progression}.
+Podatke sem pridobila iz spletne strani Wikipedia, natančneje na naslovu \url{http://en.wikipedia.org/wiki/Marathon_world_record_progression}.
 
 Moj cilj je analizirati različne podatke, npr. ali je ista oseba postavila rekord večkrat, kje je bil največkrat postavljen, kdo je večkrat podrl rekord, moški ali ženske, ter iz katere države je največ rekorderjev. Če pa bom tekom projekta dobila še kakšno idejo, bom obdelala tudi to.
 
@@ -45,7 +47,7 @@ Glede na izkušnje predvidevam, da bodo rekord večkrat podrli moški, saj velja
 
 Podatke sem s pomočjo datoteke xml.r uvozila, ker sem imela dve tabeli z istimi spremenljivkami sem ju za lažjo obdelavo podatkov kar združila skupaj in jih uredila v preglednico maraton. Ker sta bila zadnja dva stolpca brezpomenska, sem ju izbrisala, dodala pa sem nov stolpec, ki bo določal spol tekomovalca. Prav tako sem s pomočjo funckije casvsekunde čas, ki je bil podan v urah in minutah, ter ločen s podpičji, spremenila v čas, ki je določen samo s sekundami, kar mi bo gotovo koristilo pri nadaljni obravnavi podatkov v sledečih fazah.
 
-\pagebreak
+
 Želela sem izvedeti iz katerih držav prihaja največ maratoncev. Pri tem sem si pomagala z grafom in ugotovila, da jih največ prihaja iz Združenih držav Amerike ter Velike Britanije, kar je razmeroma logično, saj gre za razviti državi z veliko populacije, prav tako so ravno v teh državah najbolj znani maraton(Boston, New York, London), kar verjetno še bolj spodbudi državljane k športnemu udejstvovanju.
 
 \begin{figure}[H]
@@ -54,9 +56,9 @@ Podatke sem s pomočjo datoteke xml.r uvozila, ker sem imela dve tabeli z istimi
   \label{fig:Slika 1}
 \end{figure}
 
-
+\newpage
 Drugi graf se nanaša na razmerje med spoloma. Očitno so rekord večkrat podrli moški, kar pa tudi potrdi našo hipotezo. Znano je namreč, da se žensko in moško telo precej razlikujeta, moško telo ima načeloma več mišič in sposobnost, da le te gradi hitreje.
-Razlog, da so rekord večkrat podrli moški, se skriva tudi v dejstvu, da je bil maraton včasih rezerviran predvsem za moške. Violet Piercy iz Velike Britanije je bil prva ženska, katere čas maratona so uradno izmerili na Britanski tekmi, 3. oktobra leta 1926. Zaradi nizke konkurence med ženskamim, je bil ta rekord nepremagljiv kar 37 let. Da se je to končalo, je kriva Američanka Merry Lepper, ki je rekord Piercijeve popravila za dobre tri minute.
+Razlog, da so rekord večkrat podrli moški, se skriva tudi v dejstvu, da je bil maraton včasih rezerviran predvsem za moške. Violet Piercy iz Velike Britanije je bil prva ženska, katere čas maratona so uradno izmerili na Britanski tekmi, 3. oktobra leta 1926. Zaradi nizke konkurence med ženskami je bil ta rekord nepremagljiv kar 37 let. Da se je to končalo, je kriva Američanka Merry Lepper, ki je rekord Piercijeve popravila za dobre tri minute.
 Izključevanje žensk iz maratonov se je končalo leta 1967, ko je Kathrine Switzer na Bostonskem maratonu s svojim fantom uspešno pretekla 42 kilometov, kljub temu, da so jo med tekom nekateri moški zaničevali in vlekli za majico. Od takrat dalje pa se je stanje ženskih rekordov počasi začelo izboljševati in ženski rekordi so se postavljali sorazmerno z moškimi.
 
 
@@ -72,7 +74,7 @@ Izključevanje žensk iz maratonov se je končalo leta 1967, ko je Kathrine Swit
 
 V tretji fazi je bila naša naloga, da dva podatka, imenskega ali urejenostnega ter številskega podamo na zemljevidu. 
 Odločila sem se, da bom preučila kolikokrat je bil na posameznem maratonu postavljen rekord in to na zemljevidu predstavila kot številko spremenjlivko - jakost barve bo določala število, močnejša bo barva, večkrat je bil podrt rekord in obratno. Za ta namen je bilo potrebno podatke malo preurediti. Iz stolpca Kraj sem zato izluščila države maratonov. 
-Razberemo lahko, da je bil rekord maratona največkrat postavljen v Združenih Državah Amerike, nato v Veliki Britaniji, Nemčiji, Japonski, na Nizozemskem in tako naprej. Razlog zato je morda tudi priljubljenost teh maratonov, saj maratoni v Londonu, Bostonu, New Yorku, Berlinu in Parizu veljajo za ene izmed najbolj zanimivih na svetu in imajo posledično tudi veliko številko tekmovalcev, kar pa še poveča možnost za nov rekord. Prav tako menim, da bo imel maraton v Bostonu zaradi tragičnih dogokov leta 2013 skozi leta še večji obisk, ker nekaterim udejstvovanje pomeni veliko več, kot le preteči 42 kilometov.
+Razberemo lahko, da je bil rekord maratona največkrat postavljen v Združenih Državah Amerike, nato v Veliki Britaniji, Nemčiji, Japonski, na Nizozemskem in tako naprej. Razlog zato je morda tudi priljubljenost teh maratonov, saj maratoni v Londonu, Bostonu, New Yorku, Berlinu in Parizu veljajo za ene izmed najbolj zanimivih na svetu in imajo posledično tudi veliko številko tekmovalcev, kar pa še poveča možnost za nov rekord. Prav tako menim, da bo imel maraton v Bostonu zaradi tragičnih dogokov leta 2013 skozi leta še večji obisk, ker nekaterim udejstvovanje pomeni veliko več kot le preteči 42 kilometov.
 
 \begin{figure}[H]
   \makebox[\textwidth][c]{
@@ -82,10 +84,11 @@ Razberemo lahko, da je bil rekord maratona največkrat postavljen v Združenih D
   \label{fig:Zemljevid 1}
 \end{figure}
 
-Za imenski ali urejenostni podatek pa sem analizirala ali je rekord maratona večkrat postavil državljan države, kjer se je odvil dogodek, tujec, ali sta ga oba postavila enakokrat. Torej, če je državljan večkrat postavil rekord, bo država, kjer se je odvil maraton, obarvana z modro, če tujec z rdečo in nazadnje z zeleno, če sta rekord oba postavila enakokrat.
+Za imenski ali urejenostni podatek pa sem analizirala ali je rekord maratona večkrat postavil državljan države(v kateri se je odvil dogodek), tujec, ali sta ga oba postavila enakokrat. Torej, če je državljan večkrat postavil rekord, bo država, kjer se je odvil maraton, obarvana z modro, če tujec z rdečo in nazadnje z zeleno, če sta rekord oba postavila enakokrat.
 Ker sem pri številski spremenljivki že dobila države maratonov, je bilo ugotavljanje, ali se država ujema z državljanstvom, lažje.
 Nazadnje sem na zemjevid dodala še oznake. Na zemljevidu sem označila nekatera glavna mesta, kjer so se odvijali maratoni.
 Razberemo lahko, da so V Združenih Državah Amerike, Veliki Britaniji, Franciji in na Japonskem rekord večkrat postavili državljani, kar je za ZDA, Francijo in Veliko Britanijo kar presentljivo, saj gre za države z veliko priseljenci in turisti, ki se maratona prav načrtno udeležijo. 
+Za Japonsko pa je rezultat dokaj pričakovan, saj se na maraton prijavi samo okoli petsto ljudi. Večina teh so prav državljani, saj na maraton povabijo zelo malo mednarodnih atletov.
 
 \begin{figure}[H]
   \makebox[\textwidth][c]{
@@ -107,19 +110,19 @@ Iz grafa lahko razberemo, da so v postavljanju rekordov tri časovne luknje. Men
 Največji razlog za upad rekordov med letom 1918 in letom 1963 pa je prav gotovo že zgoraj omenjeno izključevanje žensk iz maratona.
 Prav tako rekordov ni v času druge svetovne vojne, tudi zaradi zgoraj naštetih razlogov. Kar je za čas krize in vojn povsem normalno, saj so bile leta 1940 zaradi vojne odpovedane tudi olimpijske igre na Japonskem.
 Sledilo je obdobje hladne vojne, leta 1961 so postavili Berlinski zid, zato ne preseneča, da je bil naslednji rekord v Ameriki, kjer je bila situacija sicer gospodarsko oslabljena, a bolj umirjena. Tudi sicer so bili rekordi postavljeni v državah, kjer ni bilo toliko napestosti, predvsem v Veliki Britaniji in Združenih državah Amerike.
-Od sredine osemdesetih pa do konca hladne vojne(tj. 1990 z razapadom Sovjetske zveze) je bilo spet obdobje, ko ni bil postavljen noben rekord, predvidevam, da delno tudi zaradi gospodarskih in družebnih razlogov, spomnimo se npr., da je bil leta 1989 podrt Berlinski zid.
+Od sredine osemdesetih pa do konca hladne vojne(tj. 1990 z razpadom Sovjetske zveze) je bilo spet obdobje, ko ni bil postavljen noben rekord, predvidevam, da delno tudi zaradi gospodarskih in družebnih razlogov, spomnimo se npr., da je bil leta 1989 podrt Berlinski zid.
 V današnji dobi je bil zadnji rekord podrt leta 2003. To je uspelo Pauli Radcliffe in sicer že drugo leto zapored.
 
-Z uporabo regresijske analize sem želela še izvedeti, kaj naj bi se z rekordom dogajalo v prihodnje. Uporabila sem različne načine prileganja, izključila sem tiste, katerih vrednosti so se povečevale, saj vemo ,da bo rekord vedno manjši.
-Uporabila sem tri metode : linearen model, eksponentni model in loess model. Poiskusila sem tudi z ostalimi, a so napovedi in prileganja preveč odstopala od realnosti.
+Z uporabo regresijske analize sem želela še izvedeti, kaj naj bi se z rekordom dogajalo v prihodnje. Uporabila sem različne načine prileganja, izključila sem tiste katerih vrednosti so se povečevale, saj vemo, da bo rekord vedno manjši.
+Uporabila sem  linearen model in eksponentni model. Poiskusila sem tudi z ostalimi, a so napovedi in prileganja preveč odstopala od realnosti.
 Pri lm modelu sem poiskusila kar nekaj enačb z različnimi eksponenti, a sta na koncu najbolj zadostovali dve :
 \begin{enumerate}
 \item{\verb|lm(cas ~ datt)| (linearna, čas je linearno odvisen z datumom),}
-\item{\verb|lm(logcas ~ datt)| (eksponentna, logaritem časa je linearno odvisen z datumom),}
+\item{\verb|lm(logcas ~ datt)| (logaritem časa je linearno odvisen z datumom, za napoved pa sem to funkcijo še eksponirala).}
 
 \end{enumerate}
 
-Kot pričakovano nam vsi modeli napovejo, da se bo čas rekorda z leti zniževal, sama se nastavila tud ylim, saj verjetno nihče ne bo pretekel rekorda v manj kot 5000 sekundah.
+Kot pričakovano nam vsi modeli napovejo, da se bo čas rekorda z leti zniževal, sama se nastavila tud $ylim$, saj verjetno nihče ne bo pretekel rekorda v manj kot 5000 sekundah.
 
 Predvidevam, da bodo razlike v rekordih z leti vse manjše, saj je potrebna res ogromna fizična vzdržljivost, da  pretečeš 42 kilometrov v tako malo časa. Človeško telo lahko treniramo do neke meje, a mislim, da bo rekord vse težje postaviti, saj je čas že sedaj nastavljen zelo nizko.
 
@@ -131,13 +134,13 @@ Predvidevam, da bodo razlike v rekordih z leti vse manjše, saj je potrebna res 
   \label{fig:Slika 4}
 \end{figure}
 
-Pri moški je sitaucija malo bolj raznolika, predvsem ni tako velikih prepadov kot pri ženskah, za kar je kriva tudi neenakopravnost med spoloma v začetku 20. stoletja. Kljub temu lahko prav tako zaznamo tri in sicer v obdobju med in po 1. svetovni vojni, v obdobju pred in po 2. svetovno vojno in tik pred koncem hladne vojne. Razlogi so podobni kot pri ženskah, saj gre za isto časovno obodbje, družbo, politično situacijo , zato tudi ne preseneča, da sta si grafa vizualno dokaj podobna. Opazimo edino, da moški tudi v današnji dobi konstantno podirajo rekorde, zadnji je bil namreč podrt kar leta 2014, sicer pa je bil rekrod zadnjih 6 let podrt prav v Berlinu, kar se v zgodovini sicer ni zgodilo velikrat, verjetno zaradi delitve Nemške države.
-Tudi tu sem uporabila različne modele regresijske analize, poleg linearnega, eksponentnega in loess sem uporabila tudi Gam model. Ker sta loess in Gam kompleksnejša modela, podajam samo enačbi lm modela
+Pri moški je sitaucija malo bolj raznolika, predvsem ni tako velikih prepadov kot pri ženskah, za kar je kriva tudi neenakopravnost med spoloma v začetku 20. stoletja. Kljub temu lahko prav tako zaznamo tri in sicer v obdobju med in po 1. svetovni vojni, v obdobju pred in po 2. svetovno vojno in tik pred koncem hladne vojne. Razlogi so podobni kot pri ženskah, saj gre za isto časovno obodbje, družbo, politično situacijo, zato tudi ne preseneča, da sta si grafa vizualno dokaj podobna. Opazimo edino, da moški tudi v današnji dobi konstantno podirajo rekorde, zadnji je bil namreč podrt kar leta 2014, sicer pa je bil rekrod zadnjih 6 let podrt prav v Berlinu, kar se v zgodovini sicer ni zgodilo velikrat, verjetno zaradi delitve Nemške države.
+Tudi tu sem uporabila različne modele regresijske analize, poleg linearnega in  eksponentnega sem uporabila tudi Gam model. Ker je Gam kompleksnejši model, podajam samo enačbi lm modela:
 \begin{enumerate}
 \item{\verb|lm(cas.zenske ~ datt.zenske)| (linearna, čas je linearno odvisen z datumom),}
-\item{\verb|lm(logcas.zenske ~ datt.zenske)| (eksponentna, logaritem časa je linearno odvisen z datumom).}
+\item{\verb|lm(logcas.zenske ~ datt.zenske)| (logaritem časa je linearno odvisen z datumom, za napoved pa sem to funkcijo še eksponirala).}
 \end{enumerate}
-Vidimo, da so razlike v maratonih v zadnjih 20 letih precej majhne, vzrok za to tiči(kot se omenila že zgoraj) predvsem v tem, da človeško telo lahko doseže le neko mejo fizične pripravljenosti, več kot to pa zelo težko. Najboljšo napoved nam da model Gam, ki napove, da se bo rekord postopoma zniževal ( tud itu se nastavila limito y osi). Menim, da je ta model še najbolj realen, saj ostali predvidijo kar velik padec rekordov, kar pa je, če gledamo iz telesnih sposobnosti človeka, zelo težko.
+Vidimo, da so razlike v maratonih v zadnjih 20 letih precej majhne, vzrok za to tiči(kot se omenila že zgoraj) predvsem v tem, da človeško telo lahko doseže le neko mejo fizične pripravljenosti, več kot to pa zelo težko. Najboljšo napoved nam da model Gam, ki napove, da se bo rekord postopoma zniževal. Menim, da je ta model še najbolj realen, saj ostali predvidijo kar velik padec rekordov, kar pa je, če gledamo iz telesnih sposobnosti človeka, zelo težko.
 
 
 \begin{figure}[H]
@@ -148,11 +151,25 @@ Vidimo, da so razlike v maratonih v zadnjih 20 letih precej majhne, vzrok za to 
   \label{fig:Slika 5}
 \end{figure}
 
+\newpage
+Za konec pa sem se odločila narediti še dve animaciji. Prva s točkami na zemljevidu prikazuje, kje je bil rekord tistega leta postavljen. Če je bil rekord v istem letu postavljen večkrat je krog oz. točka ustrezno večji/večja, kar je razvidno tudi v legendi. Modre točke predstavljajo moške, roza ženske.
+Vidimo, da se točka poveča samo pri moških, torej so rekord v enem letu na istem kraju postavili večkrat samo moški.
+
+\begin{center}
+\animategraphics[controls,loop, width=1.2\linewidth]{1}{ani}{}{}\\
+\end{center}
+
+Nato pa sem naredila še animacijo, ki z različno obarvanimi krogi skozi leta opisuje, kolikokrat je bil kje že podrt rekord. Če je bil rekord v kraju podrt do petkrat je krog moder, do desetkrat zelen, do petnajstkrat rdeč in nazadnje do dvajsetkrat rumen. Tako je naprimer krog na lokaciji Londona rumene barve, saj je bil rekord tam podrt kar sedemnajstkrat.
+
+\begin{center}
+\animategraphics[controls,loop, width=1.2\linewidth]{1}{anidve}{}{}\\
+\end{center}
+
 \section{Zaključek}
 Vidimo lahko, da na rekorde pomembno vplivajo tudi družbeni in gospodarski dejavniki ter, da je postavljanje le teh z leti čedalje težji in večji podvig.
 
 \newpage
-\begin{thebibliography}{4}
+\begin{thebibliography}{6}
 \bibitem{1}
   \url{http://en.wikipedia.org/wiki/Marathon_world_record_progression}\\
   {Accessed: 25-02-2015}
@@ -168,6 +185,10 @@ Vidimo lahko, da na rekorde pomembno vplivajo tudi družbeni in gospodarski deja
   \bibitem{5}
   \url{ https://www.boundless.com/economics/textbooks/boundless-economics-textbook/immigration-economics-38/introduction-to-immigration-138/dimensionalizing-immigration-numbers-of-immigrants-around-the-world-544-12641/}\\
   {Accessed: 25-02-2015}
+  \bibitem{6}
+  \url{ http://en.wikipedia.org/wiki/Beppu-Ōita_Marathon}\\
+  {Accessed: 25-02-2015}
+ 
  
 
 \end{thebibliography}
